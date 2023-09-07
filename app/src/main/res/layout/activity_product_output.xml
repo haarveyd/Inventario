@@ -10,7 +10,8 @@
 
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="vertical">
+        android:orientation="vertical"
+        tools:ignore="ExtraText">
 
         <TextView
             android:id="@+id/texto_registrar"
@@ -49,7 +50,8 @@
             android:layout_height="wrap_content"
             android:hint="Enter the barcode"
             android:inputType="text"
-            android:visibility="visible"/>
+            android:minHeight="48dp"
+            android:visibility="visible" />
 
 
         <TextView
@@ -86,5 +88,36 @@
             android:text="Save"
             android:layout_gravity="center"
             android:layout_marginTop="24dp"/>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="314dp">
+
+            <Button
+                android:id="@+id/button5"
+                android:layout_width="48dp"
+                android:layout_height="48dp"
+                android:layout_marginStart="4dp"
+                android:background="#ffff"
+                android:onClick="nextActivity6"
+                android:text="b"
+                android:textColor="#757575"
+                app:iconTint="#ffff"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="1.0" />
+
+            <ImageView
+                android:id="@+id/imageView12"
+                android:layout_width="51dp"
+                android:layout_height="48dp"
+                android:layout_marginStart="4dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="1.0"
+                app:srcCompat="@drawable/bottom_btn1" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
     </LinearLayout>
 </FrameLayout>

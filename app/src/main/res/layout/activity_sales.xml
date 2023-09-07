@@ -42,4 +42,35 @@
         android:textSize="24sp"
         android:visibility="invisible" />
 
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="366dp"
+        android:layout_height="695dp">
+
+        <Button
+            android:id="@+id/button3"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:layout_marginStart="4dp"
+            android:background="#ffff"
+            android:onClick="nextActivity6"
+            android:text="b"
+            android:textColor="#757575"
+            app:iconTint="#ffff"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="1.0" />
+
+        <ImageView
+            android:id="@+id/imageView11"
+            android:layout_width="51dp"
+            android:layout_height="48dp"
+            android:layout_marginStart="4dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="1.0"
+            app:srcCompat="@drawable/bottom_btn1" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
 </RelativeLayout>

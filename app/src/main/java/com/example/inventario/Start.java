@@ -19,4 +19,10 @@ public class Start extends AppCompatActivity {
         startActivity(accionar);
 
     }
+
+    public void nextActivity6(View v){
+        Intent accionar3=new Intent(this, Inventory.class);
+        startActivity(accionar3);
+    }
+
 }
