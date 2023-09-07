@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <array name="ListaOpciones">
+        <item> VentasMensuales</item>
+    <item> VentasAnuales</item>
+    </array>
+
+</resources>
