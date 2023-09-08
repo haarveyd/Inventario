@@ -11,13 +11,13 @@
         android:orientation="vertical">
 
         <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="INVENTORY"
-        android:layout_gravity="center"
-        android:textSize="20sp"
-        android:textStyle="bold"
-        android:layout_marginBottom="16dp"/>
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginBottom="16dp"
+            android:text="@string/INVETORYT"
+            android:textSize="20sp"
+            android:textStyle="bold" />
 
         <TableLayout
         android:id="@+id/tableLayout"
@@ -26,34 +26,38 @@
         android:stretchColumns="0,1,2,3">
 
         <TableRow>
+
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="BARCODE"
-                android:padding="8dp"
                 android:background="#f2f2f2"
-                android:textStyle="bold"/>
+                android:padding="8dp"
+                android:text="@string/BARCODEINVENTORYT"
+                android:textStyle="bold" />
+
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="NAME"
-                android:padding="8dp"
                 android:background="#f2f2f2"
-                android:textStyle="bold"/>
+                android:padding="8dp"
+                android:text="@string/NAMEPRODUCTOU"
+                android:textStyle="bold" />
+
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="AMOUNT IN WH"
-                android:padding="8dp"
                 android:background="#f2f2f2"
-                android:textStyle="bold"/>
+                android:padding="8dp"
+                android:text="@string/AMOUNTPRODUCTOUT"
+                android:textStyle="bold" />
+
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="SOLD"
-                android:padding="8dp"
                 android:background="#f2f2f2"
-                android:textStyle="bold"/>
+                android:padding="8dp"
+                android:text="@string/SOLDPRODUCTOUT"
+                android:textStyle="bold" />
         </TableRow>
 
         <!-- Filas de productos -->
@@ -70,7 +74,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:padding="8dp"
-                android:text="Folder" />
+                android:text="@string/ITEM1INVEN" />
             <TextView
                 android:id="@+id/amount1"
                 android:layout_width="wrap_content"
@@ -92,12 +96,13 @@
                 android:layout_height="wrap_content"
                 android:text="987654321"
                 android:padding="8dp"/>
+
             <TextView
                 android:id="@+id/name2"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Pencils"
-                android:padding="8dp"/>
+                android:padding="8dp"
+                android:text="@string/ITEM2PRODUCTOUT" />
             <TextView
                 android:id="@+id/amount2"
                 android:layout_width="wrap_content"
@@ -125,7 +130,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:padding="8dp"
-                android:text="Paper" />
+                android:text="@string/ITEM3PRODUCTOUT" />
             <TextView
                 android:id="@+id/amount3"
                 android:layout_width="wrap_content"
@@ -153,7 +158,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:padding="8dp"
-                android:text="Marker" />
+                android:text="@string/ITEM4PRODUCTOUT" />
             <TextView
                 android:id="@+id/amount4"
                 android:layout_width="wrap_content"

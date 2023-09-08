@@ -39,7 +39,7 @@ public class ProductEntry extends AppCompatActivity {
                 RadioButton radioButton = findViewById(checkedId);
                 if (radioButton != null) {
                     String opcionSeleccionada = radioButton.getText().toString();
-                    resultadoTextView.setText("Opción seleccionada: " + opcionSeleccionada);
+                    resultadoTextView.setText("Category/Categoria: " + opcionSeleccionada);
                 }
             }
 
@@ -52,7 +52,7 @@ public class ProductEntry extends AppCompatActivity {
     }
     public void cambiarColorTexto1(View v){
         textoregistrar.setTextColor(Color.GREEN);
-        textoregistrar.setText("REGISTRATION SUCCESFULL");
+        textoregistrar.setText("REGISTRATION SUCCESFULL/ REGISTRO EXITOSO");
 
 
     }

@@ -19,7 +19,7 @@
             android:layout_height="0dp"
             android:layout_gravity="center_horizontal"
             android:layout_weight="1"
-            android:text="OUTPUT PRODUCT"
+            android:text="@string/OUTPUTPRODU"
             android:textAppearance="?android:attr/textAppearanceLarge"
             android:textSize="20dp" />
 
@@ -27,28 +27,28 @@
             android:id="@+id/checkBoxBarcode"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Barcode"
-            android:checked="true"/>
+            android:checked="true"
+            android:text="@string/BARCODEOUT" />
 
         <CheckBox
             android:id="@+id/checkBoxNombreProducto"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Name Product"
-            android:checked="false"/>
+            android:checked="false"
+            android:text="@string/NAMEOUT" />
 
         <TextView
             android:id="@+id/textViewCodigoBarras"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Barcode:"
-            android:layout_marginTop="30dp"/>
+            android:layout_marginTop="30dp"
+            android:text="@string/BARCODEOUT2" />
 
         <EditText
             android:id="@+id/editTextCodigoBarras"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="Enter the barcode"
+            android:hint="@string/BARCODEOUT3"
             android:inputType="text"
             android:minHeight="48dp"
             android:visibility="visible" />
@@ -58,36 +58,30 @@
             android:id="@+id/textViewNombreProducto"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Name of product:"
             android:layout_marginTop="16dp"
-            android:visibility="gone"/>
+            android:text="@string/NAMEPRODUCTOUT2"
+            android:visibility="invisible" />
 
         <EditText
             android:id="@+id/editTextNombreProducto"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="Enter the name of product "
+            android:hint="@string/NAMEPRODUOUT"
             android:inputType="text"
-            android:visibility="gone"/>
+            android:visibility="invisible" />
 
         <EditText
             android:id="@+id/input_usuario"
             android:layout_width="match_parent"
             android:layout_height="0dp"
             android:layout_gravity="center_horizontal"
+            android:layout_marginTop="30dp"
             android:layout_weight="2"
-            android:hint="Output amount"
-            android:layout_marginTop="30dp"/>
+            android:hint="@string/OUTPUTAMO" /><![CDATA[
         />
 
 
-        <Button
-            android:id="@+id/btnGuardar"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Save"
-            android:layout_gravity="center"
-            android:layout_marginTop="24dp"/>
+        ]]>
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
@@ -118,6 +112,16 @@
                 app:layout_constraintTop_toTopOf="parent"
                 app:layout_constraintVertical_bias="1.0"
                 app:srcCompat="@drawable/bottom_btn1" />
+
+            <Button
+                android:id="@+id/btnGuardar"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:text="@string/BUTTONPRODUCTO"
+                tools:layout_editor_absoluteX="145dp"
+                tools:layout_editor_absoluteY="36dp"
+                tools:ignore="MissingConstraints" />
         </androidx.constraintlayout.widget.ConstraintLayout>
     </LinearLayout>
 </FrameLayout>

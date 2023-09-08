@@ -49,7 +49,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_margin="4dp"
-                        android:text="Home"
+                        android:text="@string/HOMEINVEN"
                         android:textAlignment="center"
                         android:textColor="#9695CE"
                         android:textSize="12sp" />
@@ -74,7 +74,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_margin="4dp"
-                        android:text="Profile"
+                        android:text="@string/PROFILEINVEN"
                         android:textAlignment="center"
                         android:textColor="#9695CE"
                         android:textSize="12sp" />
@@ -99,7 +99,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_margin="4dp"
-                        android:text="Support"
+                        android:text="@string/SUPPORTINVEN"
                         android:textAlignment="center"
                         android:textColor="#9695CE"
                         android:textSize="12sp" />
@@ -124,7 +124,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_margin="4dp"
-                        android:text="Settings"
+                        android:text="@string/SETTINGSINVEN"
                         android:textAlignment="center"
                         android:textColor="#9695CE"
                         android:textSize="12sp" />
@@ -212,7 +212,7 @@
                     android:drawablePadding="16dp"
                     android:elevation="3dp"
                     android:ems="10"
-                    android:hint="Searching for...."
+                    android:hint="@string/SEARCHINGINVEN"
                     android:inputType="textPersonName"
                     android:padding="16dp"
                     android:textColor="#7a7a7a"
@@ -231,15 +231,15 @@
                 android:orientation="vertical">
 
                 <LinearLayout
-                    android:layout_width="wrap_content"
+                    android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:layout_margin="20dp"
                     android:orientation="horizontal">
 
                     <LinearLayout
-                        android:layout_width="126dp"
+                        android:layout_width="124dp"
                         android:layout_height="wrap_content"
-                        android:layout_marginHorizontal="60dp"
+                        android:layout_marginLeft="65dp"
                         android:orientation="vertical">
 
                         <androidx.constraintlayout.widget.ConstraintLayout
@@ -249,18 +249,20 @@
                             android:background="@drawable/background_btn_2">
 
                             <Button
-                                android:id="@+id/entry"
+                                android:id="@+id/entry3"
                                 android:layout_width="68dp"
                                 android:layout_height="48dp"
                                 android:onClick="nextActivity2"
                                 android:text="Button"
-                                app:layout_constraintBottom_toBottomOf="@+id/imageView23"
-                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintBottom_toBottomOf="@+id/imageView21"
+                                app:layout_constraintEnd_toEndOf="@+id/imageView21"
                                 app:layout_constraintStart_toStartOf="parent"
-                                app:layout_constraintTop_toTopOf="@+id/imageView23" />
+                                app:layout_constraintTop_toTopOf="@+id/imageView21"
+                                app:layout_constraintVertical_bias="0.534"
+                                tools:ignore="DuplicateIds" />
 
                             <ImageView
-                                android:id="@+id/imageView23"
+                                android:id="@+id/imageView21"
                                 android:layout_width="90dp"
                                 android:layout_height="91dp"
                                 app:srcCompat="@drawable/circle_green"
@@ -268,14 +270,15 @@
                                 tools:layout_editor_absoluteX="6dp" />
 
                             <ImageView
-                                android:id="@+id/imageView19"
-                                android:layout_width="68dp"
-                                android:layout_height="54dp"
+                                android:id="@+id/imageView17"
+                                android:layout_width="78dp"
+                                android:layout_height="65dp"
                                 android:layout_marginRight="10dp"
                                 app:layout_constraintBottom_toBottomOf="parent"
                                 app:layout_constraintEnd_toEndOf="parent"
                                 app:layout_constraintStart_toStartOf="parent"
                                 app:layout_constraintTop_toTopOf="parent"
+                                app:layout_constraintVertical_bias="0.347"
                                 app:srcCompat="@drawable/iniciar_sesion" />
 
                         </androidx.constraintlayout.widget.ConstraintLayout>
@@ -284,10 +287,10 @@
                             android:id="@+id/textView10"
                             android:layout_width="111dp"
                             android:layout_height="wrap_content"
-                            android:text="Product Entry"
+                            android:text="@string/PRODUCTINVE"
                             android:textAlignment="center"
                             android:textColor="#34346e"
-                            android:textSize="14sp"
+                            android:textSize="16sp"
                             android:textStyle="bold"
                             tools:ignore="DuplicateIds" />
 
@@ -306,7 +309,7 @@
                             android:background="@drawable/background_btn_2">
 
                             <Button
-                                android:id="@+id/entry2"
+                                android:id="@+id/entry4"
                                 android:layout_width="68dp"
                                 android:layout_height="48dp"
                                 android:onClick="nextActivity3"
@@ -314,27 +317,29 @@
                                 app:layout_constraintBottom_toBottomOf="parent"
                                 app:layout_constraintEnd_toEndOf="parent"
                                 app:layout_constraintStart_toStartOf="parent"
-                                app:layout_constraintTop_toTopOf="@+id/imageView24"
-                                app:layout_constraintVertical_bias="0.534" />
+                                app:layout_constraintTop_toTopOf="@+id/imageView22"
+                                app:layout_constraintVertical_bias="0.534"
+                                tools:ignore="DuplicateIds" />
 
                             <ImageView
-                                android:id="@+id/imageView24"
+                                android:id="@+id/imageView22"
                                 android:layout_width="90dp"
                                 android:layout_height="91dp"
                                 app:srcCompat="@drawable/circle_green"
-                                tools:ignore="MissingConstraints"
+                                tools:ignore="DuplicateIds,MissingConstraints"
                                 tools:layout_editor_absoluteX="6dp" />
 
                             <ImageView
-                                android:id="@+id/imageView25"
-                                android:layout_width="68dp"
-                                android:layout_height="54dp"
+                                android:id="@+id/imageView18"
+                                android:layout_width="83dp"
+                                android:layout_height="61dp"
                                 android:layout_marginRight="10dp"
                                 app:layout_constraintBottom_toBottomOf="parent"
                                 app:layout_constraintEnd_toEndOf="parent"
-                                app:layout_constraintHorizontal_bias="0.875"
+                                app:layout_constraintHorizontal_bias="0.941"
                                 app:layout_constraintStart_toStartOf="parent"
                                 app:layout_constraintTop_toTopOf="parent"
+                                app:layout_constraintVertical_bias="0.41"
                                 app:srcCompat="@drawable/cerrar_sesion" />
 
                         </androidx.constraintlayout.widget.ConstraintLayout>
@@ -343,10 +348,10 @@
                             android:id="@+id/textView9"
                             android:layout_width="111dp"
                             android:layout_height="wrap_content"
-                            android:text="Product Output"
+                            android:text="@string/PRODUCTOINVEN"
                             android:textAlignment="center"
                             android:textColor="#34346e"
-                            android:textSize="14sp"
+                            android:textSize="16sp"
                             android:textStyle="bold"
                             tools:ignore="DuplicateIds" />
 
@@ -362,7 +367,7 @@
                     android:orientation="horizontal">
 
                     <LinearLayout
-                        android:layout_width="129dp"
+                        android:layout_width="124dp"
                         android:layout_height="wrap_content"
                         android:layout_marginLeft="65dp"
                         android:orientation="vertical">
@@ -383,14 +388,15 @@
                                 app:layout_constraintEnd_toEndOf="@+id/imageView21"
                                 app:layout_constraintStart_toStartOf="parent"
                                 app:layout_constraintTop_toTopOf="@+id/imageView21"
-                                app:layout_constraintVertical_bias="0.534" />
+                                app:layout_constraintVertical_bias="0.534"
+                                tools:ignore="DuplicateIds" />
 
                             <ImageView
                                 android:id="@+id/imageView21"
                                 android:layout_width="90dp"
                                 android:layout_height="91dp"
                                 app:srcCompat="@drawable/circle_green"
-                                tools:ignore="MissingConstraints"
+                                tools:ignore="DuplicateIds,MissingConstraints"
                                 tools:layout_editor_absoluteX="6dp" />
 
                             <ImageView
@@ -404,7 +410,8 @@
                                 app:layout_constraintStart_toStartOf="parent"
                                 app:layout_constraintTop_toTopOf="parent"
                                 app:layout_constraintVertical_bias="0.347"
-                                app:srcCompat="@drawable/inventario" />
+                                app:srcCompat="@drawable/inventario"
+                                tools:ignore="DuplicateIds" />
 
                         </androidx.constraintlayout.widget.ConstraintLayout>
 
@@ -412,7 +419,7 @@
                             android:id="@+id/textView10"
                             android:layout_width="111dp"
                             android:layout_height="wrap_content"
-                            android:text="Inventory"
+                            android:text="@string/INVENTORYINVE"
                             android:textAlignment="center"
                             android:textColor="#34346e"
                             android:textSize="16sp"
@@ -443,14 +450,15 @@
                                 app:layout_constraintEnd_toEndOf="parent"
                                 app:layout_constraintStart_toStartOf="parent"
                                 app:layout_constraintTop_toTopOf="@+id/imageView22"
-                                app:layout_constraintVertical_bias="0.534" />
+                                app:layout_constraintVertical_bias="0.534"
+                                tools:ignore="DuplicateIds" />
 
                             <ImageView
                                 android:id="@+id/imageView22"
                                 android:layout_width="90dp"
                                 android:layout_height="91dp"
                                 app:srcCompat="@drawable/circle_green"
-                                tools:ignore="MissingConstraints"
+                                tools:ignore="DuplicateIds,MissingConstraints"
                                 tools:layout_editor_absoluteX="6dp" />
 
                             <ImageView
@@ -464,7 +472,8 @@
                                 app:layout_constraintStart_toStartOf="parent"
                                 app:layout_constraintTop_toTopOf="parent"
                                 app:layout_constraintVertical_bias="0.41"
-                                app:srcCompat="@drawable/signo_de_dolar" />
+                                app:srcCompat="@drawable/signo_de_dolar"
+                                tools:ignore="DuplicateIds" />
 
                         </androidx.constraintlayout.widget.ConstraintLayout>
 
@@ -472,7 +481,7 @@
                             android:id="@+id/textView9"
                             android:layout_width="111dp"
                             android:layout_height="wrap_content"
-                            android:text="Sales"
+                            android:text="@string/SALESINVEN"
                             android:textAlignment="center"
                             android:textColor="#34346e"
                             android:textSize="16sp"
