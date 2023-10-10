@@ -21,7 +21,7 @@ public class ProductEntry extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_productentry);
+        setContentView(R.layout.fragment_productentry);
 
         textoregistrar=(TextView)findViewById(R.id.texto_registrar);
 

@@ -17,7 +17,7 @@ public class Sales extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_sales);
+        setContentView(R.layout.fragment_sales);
 
         switchSales = findViewById(R.id.switchSales);
         textAltas = findViewById(R.id.textAltas);
