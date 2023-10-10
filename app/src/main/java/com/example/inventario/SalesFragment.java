@@ -2,6 +2,8 @@ package com.example.inventario;
 
 import android.os.Bundle;
 
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 
 import android.view.LayoutInflater;
@@ -67,7 +69,12 @@ public class SalesFragment extends Fragment {
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.fragment_sales, container, false);
+        return view;
+    }
 
+    @Override
+    public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
+        super.onViewCreated(view, savedInstanceState);
         switchSales = view.findViewById(R.id.switchSales);
         textAltas = view.findViewById(R.id.textAltas);
         textHighValue = view.findViewById(R.id.textHighValue);
@@ -84,7 +91,5 @@ public class SalesFragment extends Fragment {
                 }
             }
         });
-
-        return view;
     }
 }

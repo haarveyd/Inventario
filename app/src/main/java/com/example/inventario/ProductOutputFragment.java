@@ -2,6 +2,8 @@ package com.example.inventario;
 
 import android.os.Bundle;
 
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 
 import android.view.LayoutInflater;
@@ -72,6 +74,13 @@ public class ProductOutputFragment extends Fragment {
         // Inflate the layout for this fragment
 
         View view = inflater.inflate(R.layout.fragment_productoutput, container, false);
+        return view;
+
+    }
+
+    @Override
+    public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
+        super.onViewCreated(view, savedInstanceState);
 
         checkBoxBarcode = view.findViewById(R.id.checkBoxBarcode);
         checkBoxNombreProducto = view.findViewById(R.id.checkBoxNombreProducto);
@@ -113,8 +122,5 @@ public class ProductOutputFragment extends Fragment {
                 // Agrega aquí la lógica para guardar la información ingresada.
             }
         });
-
-        return view;
-
     }
 }

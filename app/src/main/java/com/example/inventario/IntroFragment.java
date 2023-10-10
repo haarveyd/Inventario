@@ -3,6 +3,8 @@ package com.example.inventario;
 import android.content.Intent;
 import android.os.Bundle;
 
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 
 import android.view.LayoutInflater;
@@ -62,13 +64,9 @@ public class IntroFragment extends Fragment {
         // Inflate the layout for this fragment
         return inflater.inflate(R.layout.fragment_intro, container, false);
     }
-    public void nextActivity() {
-        Intent accionar = new Intent(getActivity(), Login.class);
-        startActivity(accionar);
-    }
 
-    public void nextActivity6() {
-        Intent accionar3 = new Intent(getActivity(), Inventory.class);
-        startActivity(accionar3);
+    @Override
+    public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
+        super.onViewCreated(view, savedInstanceState);
     }
 }

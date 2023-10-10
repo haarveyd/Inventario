@@ -3,6 +3,8 @@ package com.example.inventario;
 import android.graphics.Color;
 import android.os.Bundle;
 
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 
 import android.view.LayoutInflater;
@@ -70,6 +72,15 @@ public class ProductEntryFragment extends Fragment {
                              Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_productentry, container, false);
 
+
+
+        return view;
+    }
+
+    @Override
+    public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
+        super.onViewCreated(view, savedInstanceState);
+
         textoregistrar = view.findViewById(R.id.texto_registrar);
         radioGroup = view.findViewById(R.id.radioGroup);
         resultadoTextView = view.findViewById(R.id.resultadoTextView);
@@ -84,9 +95,8 @@ public class ProductEntryFragment extends Fragment {
                 }
             }
         });
-
-        return view;
     }
+
     public void cambiarColorTexto1() {
         textoregistrar.setTextColor(Color.GREEN);
         textoregistrar.setText("REGISTRATION SUCCESSFUL/ REGISTRO EXITOSO");

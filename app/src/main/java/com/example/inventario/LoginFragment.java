@@ -3,6 +3,8 @@ package com.example.inventario;
 import android.content.Intent;
 import android.os.Bundle;
 
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 
 import android.text.Editable;
@@ -69,6 +71,12 @@ public class LoginFragment extends Fragment {
         // Inflar el diseño del fragmento aquí (reemplaza R.layout.fragment_login con tu diseño)
         View view = inflater.inflate(R.layout.fragment_login, container, false);
 
+       return view;
+    }
+
+    @Override
+    public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
+        super.onViewCreated(view, savedInstanceState);
         nombre = view.findViewById(R.id.usuario);
         user = view.findViewById(R.id.editTextText);
 
@@ -88,11 +96,7 @@ public class LoginFragment extends Fragment {
             }
         });
 
-        return view;
     }
 
-    public void nextActivity(View v) {
-        Intent accionar1 = new Intent(getActivity(), Inventory.class);
-        startActivity(accionar1);
-    }
+
 }
