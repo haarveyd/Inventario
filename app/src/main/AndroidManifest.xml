@@ -19,7 +19,7 @@
             android:name=".Sales"
             android:exported="false" />
         <activity
-            android:name=".Inventoryt"
+            android:name=".Table"
             android:exported="false" />
         <activity
             android:name=".ProductOutput"
@@ -34,7 +34,7 @@
             android:name=".Login"
             android:exported="false" />
         <activity
-            android:name=".Start"
+            android:name=".Intro"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

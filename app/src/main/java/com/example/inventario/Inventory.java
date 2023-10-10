@@ -33,7 +33,7 @@ public class Inventory extends AppCompatActivity {
     }
 
     public void nextActivity4(View v){
-        Intent accionar3=new Intent(this, Inventoryt.class);
+        Intent accionar3=new Intent(this, Table.class);
         startActivity(accionar3);
     }
 

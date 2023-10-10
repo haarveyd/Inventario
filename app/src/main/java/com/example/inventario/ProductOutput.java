@@ -22,7 +22,7 @@ public class ProductOutput extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_product_output);
+        setContentView(R.layout.activity_productoutput);
 
         checkBoxBarcode = findViewById(R.id.checkBoxBarcode);
         checkBoxNombreProducto = findViewById(R.id.checkBoxNombreProducto);

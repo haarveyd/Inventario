@@ -7,8 +7,6 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.RadioButton;
 import android.widget.Spinner;
-import androidx.appcompat.app.AppCompatActivity;
-import android.os.Bundle;
 import android.widget.RadioGroup;
 import android.widget.TextView;
 
@@ -23,7 +21,7 @@ public class ProductEntry extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_product_entry);
+        setContentView(R.layout.activity_productentry);
 
         textoregistrar=(TextView)findViewById(R.id.texto_registrar);
 
