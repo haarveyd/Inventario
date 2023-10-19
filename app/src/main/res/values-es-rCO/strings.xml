@@ -48,4 +48,6 @@
     <string name="SOLDPRODUCTOUT">VENTAS</string>
     <string name="MOTHYLYSALES">Ventas Mensuales</string>
     <string name="MONTHLYSALES2">Ventas Mensuales</string>
+    <string name="nombre">Nombre</string>
+    <string name="todo_2">TODO</string>
 </resources>
