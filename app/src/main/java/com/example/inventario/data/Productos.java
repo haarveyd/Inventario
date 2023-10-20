@@ -19,22 +19,22 @@ public class Productos {
         this.valorUnitario = valorUnitario;
     }
 
-    public Productos(Cursor cur) {
-        codigo= cur.getInt(cur.getColumnIndex(ProductosEntry.CODIGO));
-        nomProducto= cur.getString(cur.getColumnIndex(ProductosEntry.NAME));
-        stock= cur.getInt(cur.getColumnIndex(ProductosEntry.STOCK));
-        salidas= cur.getInt(cur.getColumnIndex(ProductosEntry.SALIDAS));
-        valorUnitario= cur.getInt(cur.getColumnIndex(ProductosEntry.VALOR));
+    public Productos(Cursor cursor) {
+        codigo= cursor.getInt(cursor.getColumnIndex(ProductosEntry.CODIGO));
+        nomProducto= cursor.getString(cursor.getColumnIndex(ProductosEntry.NAMEPROD));
+        stock= cursor.getInt(cursor.getColumnIndex(ProductosEntry.STOCK));
+        salidas= cursor.getInt(cursor.getColumnIndex(ProductosEntry.SALIDAS));
+        valorUnitario= cursor.getInt(cursor.getColumnIndex(ProductosEntry.VALOR));
     }
     public ContentValues toContentValues(){
-        ContentValues conten = new ContentValues();
-        conten.put(ProductosEntry.CODIGO, codigo);
-        conten.put(ProductosEntry.NAME, nomProducto);
-        conten.put(ProductosEntry.STOCK, stock);
-        conten.put(ProductosEntry.SALIDAS, salidas);
-        conten.put(ProductosEntry.VALOR, valorUnitario);
+        ContentValues Values = new ContentValues();
+        Values.put(ProductosEntry.CODIGO, codigo);
+        Values.put(ProductosEntry.NAMEPROD, nomProducto);
+        Values.put(ProductosEntry.STOCK, stock);
+        Values.put(ProductosEntry.SALIDAS, salidas);
+        Values.put(ProductosEntry.VALOR, valorUnitario);
 
-        return conten;
+        return Values;
     }
 
     public int getCodigo() {
