@@ -10,9 +10,9 @@ public class Usuario {
     private int codigo;
     private String nomUsuario;
     private String user;
-    private int password;
+    private String password;
 
-    public Usuario(int codigo, String nomUsuario,String user, int password) {
+    public Usuario(int codigo, String nomUsuario,String user, String password) {
         this.codigo = codigo;
         this.nomUsuario = nomUsuario;
         this.user = user;
@@ -24,7 +24,7 @@ public class Usuario {
         codigo= cursor.getInt(cursor.getColumnIndex(UsuarioEntry.ID));
         nomUsuario= cursor.getString(cursor.getColumnIndex(UsuarioEntry.NAME));
         user= cursor.getString(cursor.getColumnIndex(UsuarioEntry.USER));
-        password= cursor.getInt(cursor.getColumnIndex(UsuarioEntry.PASSWORD));
+        password= cursor.getString(cursor.getColumnIndex(UsuarioEntry.PASSWORD));
 
     }
     public ContentValues toContentValues(){
@@ -48,7 +48,7 @@ public class Usuario {
         return user;
     }
 
-    public int getPassword() {
+    public String getPassword() {
         return password;
     }
 
@@ -65,7 +65,7 @@ public class Usuario {
         this.user = usuario;
     }
 
-    public void setPassword(int password) {
+    public void setPassword(String password) {
 
         this.password = password;
     }

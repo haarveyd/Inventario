@@ -1,6 +1,76 @@
 <?xml version="1.0" encoding="utf-8"?>
 <navigation xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:id="@+id/graph">
+    android:id="@+id/graph"
+    xmlns:tools="http://schemas.android.com/tools"
+    app:startDestination="@id/introFragment">
 
+    <fragment
+        android:id="@+id/introFragment"
+        android:name="com.example.inventario.IntroFragment"
+        android:label="IntroFragment"
+        tools:layout="@layout/fragment_intro" >
+        <action
+            android:id="@+id/action_introFragment_to_loginFragment"
+            app:destination="@id/loginFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/loginFragment"
+        android:name="com.example.inventario.LoginFragment"
+        android:label="fragment_login"
+        tools:layout="@layout/fragment_login" >
+        <action
+            android:id="@+id/action_loginFragment_to_registerFragment"
+            app:destination="@id/registerFragment" />
+        <action
+            android:id="@+id/action_loginFragment_to_inventoryFragment"
+            app:destination="@id/inventoryFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/registerFragment"
+        android:name="com.example.inventario.RegisterFragment"
+        android:label="fragment_register"
+        tools:layout="@layout/fragment_register" >
+        <action
+            android:id="@+id/action_registerFragment_to_loginFragment"
+            app:destination="@id/loginFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/inventoryFragment"
+        android:name="com.example.inventario.InventoryFragment"
+        android:label="InventoryFragment"
+        tools:layout="@layout/fragment_inventory" >
+        <action
+            android:id="@+id/action_inventoryFragment_to_productOutputFragment"
+            app:destination="@id/productOutputFragment" />
+        <action
+            android:id="@+id/action_inventoryFragment_to_productEntryFragment"
+            app:destination="@id/productEntryFragment" />
+        <action
+            android:id="@+id/action_inventoryFragment_to_salesFragment"
+            app:destination="@id/salesFragment" />
+        <action
+            android:id="@+id/action_inventoryFragment_to_tableFragment"
+            app:destination="@id/tableFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/tableFragment"
+        android:name="com.example.inventario.TableFragment"
+        android:label="TableFragment"
+        tools:layout="@layout/fragment_table" />
+    <fragment
+        android:id="@+id/productOutputFragment"
+        android:name="com.example.inventario.ProductOutputFragment"
+        android:label="ProductOutputFragment"
+        tools:layout="@layout/fragment_productoutput" />
+    <fragment
+        android:id="@+id/productEntryFragment"
+        android:name="com.example.inventario.ProductEntryFragment"
+        android:label="ProductEntryFragment"
+        tools:layout="@layout/fragment_productentry" />
+    <fragment
+        android:id="@+id/salesFragment"
+        android:name="com.example.inventario.SalesFragment"
+        android:label="SalesFragment"
+        tools:layout="@layout/fragment_sales" />
 </navigation>
