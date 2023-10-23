@@ -63,7 +63,7 @@ EditText nombre,apellido,NomUsuario, nuevaContrase;
         fragment.setArguments(args);
         return fragment;
     }
-
+    //uuw
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
