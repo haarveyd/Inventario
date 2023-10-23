@@ -4,12 +4,12 @@ plugins {
 
 android {
     namespace = "com.example.inventario"
-    compileSdk = 33
+    compileSdk = 34
 
     defaultConfig {
         applicationId = "com.example.inventario"
         minSdk = 30
-        targetSdk = 33
+        targetSdk = 34
         versionCode = 1
         versionName = "1.0"
 
