@@ -1,12 +1,25 @@
 package com.example.inventario;
 
+import android.database.Cursor;
 import android.os.Bundle;
 
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
+import androidx.navigation.Navigation;
 
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
+import android.widget.EditText;
+import android.widget.Toast;
+
+import com.example.inventario.data.InventarioDBHelper;
+import com.example.inventario.data.Usuario;
+import com.example.inventario.data.UsuarioContract.UsuarioEntry;
+
+import java.util.Random;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -27,6 +40,11 @@ public class RegisterFragment extends Fragment {
     public RegisterFragment() {
         // Required empty public constructor
     }
+
+EditText nombre,apellido,NomUsuario, nuevaContrase;
+    Button Registro;
+
+    InventarioDBHelper basedatos;
 
     /**
      * Use this factory method to create a new instance of
@@ -60,5 +78,43 @@ public class RegisterFragment extends Fragment {
                              Bundle savedInstanceState) {
 
         return inflater.inflate(R.layout.fragment_register, container, false);
+    }
+
+    @Override
+    public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
+        super.onViewCreated(view, savedInstanceState);
+
+        nombre= getView().findViewById(R.id.primerNombre);
+        apellido= getView().findViewById(R.id.Apellido);
+        NomUsuario= getView().findViewById(R.id.NombreUsuario);
+        nuevaContrase= getView().findViewById(R.id.NuevaContrasena);
+        Registro=getView().findViewById(R.id.RegistroUsuario);
+
+        Registro.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+            String NombreCompleto = nombre.getText().toString()+" "+ apellido.getText().toString();
+            String UsuarioUnico= NomUsuario.getText().toString();
+            String Contra = nuevaContrase.getText().toString();
+            int idRandom = (int) (Math.random() * 1000) + 1;
+
+                Cursor usuarioConsultadoID = basedatos.getUsuarioById(Integer.toString(idRandom));
+                Cursor usuarioConsultadoUSER = basedatos.getUsuarioByUser(UsuarioUnico);
+                if(usuarioConsultadoUSER.moveToFirst()){
+                    Toast.makeText( getActivity(),"Ya existe ese nombre de usuario",Toast.LENGTH_LONG ).show();
+                }
+                else {
+                    while (usuarioConsultadoID.moveToFirst()){
+
+                    idRandom = (int) (Math.random() * 1000) + 1;
+                    usuarioConsultadoID = basedatos.getUsuarioById(Integer.toString(idRandom));
+                }
+                    Usuario nuevoUsuario = new Usuario(idRandom,NombreCompleto,UsuarioUnico,Contra);
+                    basedatos.saveUsuario(nuevoUsuario);
+                    Navigation.findNavController(view).navigate(R.id.loginFragment);
+                 }
+            }
+        });
+
     }
 }

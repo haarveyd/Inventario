@@ -7,7 +7,7 @@
     <string name="USERLOGIN">USER</string>
     <string name="USERLOGIN2">User</string>
     <string name="PASSWORDLOGIN">Password</string>
-    <string name="RECOVERYLOGIN">Are you new user? Register</string>
+    <string name="RECOVERYLOGIN">Are you new user?</string>
     <string name="LOGINLOGIN">Login</string>
     <string name="FORGETLOGIN">Forget Password? Recovery it</string>
     <string name="SEARCHINGINVEN">Searching for....</string>
@@ -60,4 +60,5 @@
     <string name="todo_2">TODO</string>
     <string name="acepto_los_t_rminos_y_condiciones">Acepto los Términos y Condiciones</string>
     <string name="bienvenido">¡Bienvenido!</string>
+    <string name="registrar">Register</string>
 </resources>

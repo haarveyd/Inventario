@@ -28,7 +28,7 @@ public class InventarioDBHelper extends SQLiteOpenHelper {
                 UsuarioEntry.ID + " INTEGER PRIMARY KEY," +
                 UsuarioEntry.NAME+ " TEXT NOT NULL," +
                 UsuarioEntry.USER+ " TEXT NOT NULL," +
-                UsuarioEntry.PASSWORD+ " INTEGER NOT NULL)");
+                UsuarioEntry.PASSWORD+ " TEXT NOT NULL)");
 
         sqLiteDatabase.execSQL("CREATE TABLE " + MovimientosEntry.TABLE_NAME + " ("+
                 MovimientosEntry.IDMOV + " INTEGER PRIMARY KEY," +
@@ -76,6 +76,8 @@ public class InventarioDBHelper extends SQLiteOpenHelper {
                 null);
         return c;
     }
+
+
 
     public Cursor getProductoByName(String productoName) {
         Cursor c = getReadableDatabase().query(
@@ -135,6 +137,18 @@ public class InventarioDBHelper extends SQLiteOpenHelper {
                 null,
                 UsuarioEntry.ID + " LIKE ?",
                 new String[]{usuarioId},
+                null,
+                null,
+                null);
+        return c;
+    }
+
+    public Cursor getUsuarioByUserPassword(String userUnique, String passwordUser) {
+        Cursor c = getReadableDatabase().query(
+                UsuarioEntry.TABLE_NAME,
+                null,
+                UsuarioEntry.USER + " LIKE ? AND " + UsuarioEntry.PASSWORD + " LIKE ?",
+                new String[]{userUnique, passwordUser},
                 null,
                 null,
                 null);

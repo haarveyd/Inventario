@@ -1,19 +1,24 @@
 package com.example.inventario;
 
-import android.content.Intent;
+import android.database.Cursor;
 import android.os.Bundle;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
+import androidx.navigation.Navigation;
 
 import android.text.Editable;
 import android.text.TextWatcher;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.Toast;
+
+import com.example.inventario.data.InventarioDBHelper;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -62,8 +67,12 @@ public class LoginFragment extends Fragment {
         }
     }
 
-    private EditText user;
+    private EditText user,password;
     private TextView nombre;
+
+    private Button registro, login;
+
+    InventarioDBHelper baseDatos;
 
 
     @Override
@@ -78,7 +87,10 @@ public class LoginFragment extends Fragment {
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
         nombre = view.findViewById(R.id.usuario);
-        user = view.findViewById(R.id.editTextText);
+        user = view.findViewById(R.id.userTextField);
+        password= view.findViewById(R.id.NuevaContrasena);
+        registro = view.findViewById(R.id.registro);
+        login = view.findViewById(R.id.RegistroUsuario);
 
         user.addTextChangedListener(new TextWatcher() {
             @Override
@@ -95,6 +107,27 @@ public class LoginFragment extends Fragment {
                 nombre.setText(usuarioinicial);
             }
         });
+
+        baseDatos= new InventarioDBHelper(getContext());
+        registro.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Navigation.findNavController(view).navigate(R.id.registerFragment);
+            }
+        });
+
+        login.setOnClickListener( new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Cursor usuarioConsultado = baseDatos.getUsuarioByUserPassword( user.getText().toString(),
+                        password.getText().toString());
+                if(usuarioConsultado.moveToFirst()){
+                    Navigation.findNavController(view).navigate(R.id.inventoryFragment);
+                }else{
+                    Toast.makeText( getActivity(),"Datos incorrectos",Toast.LENGTH_LONG ).show();
+                }
+            }
+        } );
 
     }
 
