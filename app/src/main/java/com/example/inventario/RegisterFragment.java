@@ -89,7 +89,7 @@ EditText nombre,apellido,NomUsuario, nuevaContrase;
         NomUsuario= getView().findViewById(R.id.NombreUsuario);
         nuevaContrase= getView().findViewById(R.id.NuevaContrasena);
         Registro=getView().findViewById(R.id.RegistroUsuario);
-
+        basedatos = new InventarioDBHelper(getContext());
         Registro.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {

@@ -225,7 +225,7 @@ public class InventarioDBHelper extends SQLiteOpenHelper {
                 new String[]{movimientoId});
     }
 
-    public int updateMovimiento(Productos movimientoModificar, String movimientoId) {
+    public int updateMovimiento(Movimientos movimientoModificar, String movimientoId) {
         return getWritableDatabase().update(
                 MovimientosEntry.TABLE_NAME,
                 movimientoModificar.toContentValues(),

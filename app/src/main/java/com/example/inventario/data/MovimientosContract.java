@@ -9,8 +9,8 @@ public class MovimientosContract {
         public static final String IDMOV  ="codigoMovimiento";
         public static final String IDUSER  ="nomUsuario";
         public static final String IDPROD  ="usuario";
-        public static final String ACTION ="password";
-        public static final String QUANTITY ="password";
+        public static final String ACTION ="accion";
+        public static final String QUANTITY ="cantidad";
 
 
 
