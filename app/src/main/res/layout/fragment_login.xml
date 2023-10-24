@@ -19,14 +19,14 @@
 
     <ImageView
         android:id="@+id/imageView8"
-        android:layout_width="356dp"
-        android:layout_height="266dp"
+        android:layout_width="351dp"
+        android:layout_height="257dp"
         app:layout_constraintBottom_toBottomOf="@+id/imageView"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.495"
+        app:layout_constraintHorizontal_bias="0.533"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.0"
+        app:layout_constraintVertical_bias="0.052"
         app:srcCompat="@drawable/_311295_395" />
 
     <TextView
@@ -54,7 +54,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView5"
-        app:layout_constraintVertical_bias="0.37" />
+        app:layout_constraintVertical_bias="0.274" />
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -144,6 +144,8 @@
             android:layout_width="match_parent"
             android:layout_height="40dp"
             android:layout_marginTop="20dp"
+            android:layout_marginLeft="20dp"
+            android:layout_margin="20dp"
             android:orientation="horizontal">
 
 
@@ -159,7 +161,6 @@
                 android:id="@+id/registro"
                 android:layout_width="105dp"
                 android:layout_height="wrap_content"
-
                 android:layout_weight="1"
                 android:background="#00FFFFFF"
                 android:text="Register here"
