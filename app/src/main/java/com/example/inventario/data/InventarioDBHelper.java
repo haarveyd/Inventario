@@ -37,7 +37,7 @@ public class InventarioDBHelper extends SQLiteOpenHelper {
                 MovimientosEntry.ACTION+ " INTEGER NOT NULL,"+
                 MovimientosEntry.QUANTITY + " INTEGER NOT NULL)");
     }
-
+//uwu
     @Override
     public void onUpgrade(SQLiteDatabase sqLiteDatabase, int i, int i1) {
 

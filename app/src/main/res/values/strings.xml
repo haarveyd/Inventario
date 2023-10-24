@@ -69,4 +69,5 @@
     <string name="editar_agregar" translatable="false">editar o agregar</string>
     <string name="agregar" translatable="false"> agregar</string>
     <string name="registrar" translatable="false"> Registarse</string>
+    <string name="historial">Historial</string>
 </resources>
