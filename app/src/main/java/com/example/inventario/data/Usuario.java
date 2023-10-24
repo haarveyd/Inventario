@@ -9,20 +9,22 @@ public class Usuario {
 
     private int codigo;
     private String nomUsuario;
+    private String apUsuario;
     private String user;
     private String password;
 
-    public Usuario(int codigo, String nomUsuario,String user, String password) {
+    public Usuario(int codigo, String nomUsuario, String apUsuario, String user, String password) {
         this.codigo = codigo;
         this.nomUsuario = nomUsuario;
+        this.apUsuario = apUsuario;
         this.user = user;
         this.password = password;
-
     }
 
     public Usuario(Cursor cursor) {
         codigo= cursor.getInt(cursor.getColumnIndex(UsuarioEntry.ID));
         nomUsuario= cursor.getString(cursor.getColumnIndex(UsuarioEntry.NAME));
+        apUsuario= cursor.getString(cursor.getColumnIndex(UsuarioEntry.LASTNAME));
         user= cursor.getString(cursor.getColumnIndex(UsuarioEntry.USER));
         password= cursor.getString(cursor.getColumnIndex(UsuarioEntry.PASSWORD));
 
@@ -31,6 +33,7 @@ public class Usuario {
         ContentValues Values = new ContentValues();
         Values.put(UsuarioEntry.ID, codigo);
         Values.put(UsuarioEntry.NAME, nomUsuario);
+        Values.put(UsuarioEntry.LASTNAME, apUsuario);
         Values.put(UsuarioEntry.USER, user);
         Values.put(UsuarioEntry.PASSWORD, password);
         return Values;
@@ -44,30 +47,17 @@ public class Usuario {
         return nomUsuario;
     }
 
-    public String getUsuario() {
+    public String getApUsuario() {
+        return apUsuario;
+    }
+
+    public String getUser() {
         return user;
     }
 
     public String getPassword() {
         return password;
     }
-
-
-    public void setCodigo(int codigo) {
-        this.codigo = codigo;
-    }
-
-    public void setNomUsuario(String nomUsuario) {
-        this.nomUsuario = nomUsuario;
-    }
-
-    public void setUsuario(String usuario) {
-        this.user = usuario;
-    }
-
-    public void setPassword(String password) {
-
-        this.password = password;
-    }
-
 }
+
+

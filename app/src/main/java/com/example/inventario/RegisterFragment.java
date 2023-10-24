@@ -41,9 +41,8 @@ public class RegisterFragment extends Fragment {
         // Required empty public constructor
     }
 
-EditText nombre,apellido,NomUsuario, nuevaContrase;
+    EditText nombre,apellido,NomUsuario, nuevaContrase;
     Button Registro;
-
     InventarioDBHelper basedatos;
 
     /**
@@ -93,7 +92,8 @@ EditText nombre,apellido,NomUsuario, nuevaContrase;
         Registro.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-            String NombreCompleto = nombre.getText().toString()+" "+ apellido.getText().toString();
+            String Nombre = nombre.getText().toString();
+            String Apellido = apellido.getText().toString();
             String UsuarioUnico= NomUsuario.getText().toString();
             String Contra = nuevaContrase.getText().toString();
             int idRandom = (int) (Math.random() * 1000) + 1;
@@ -109,7 +109,7 @@ EditText nombre,apellido,NomUsuario, nuevaContrase;
                     idRandom = (int) (Math.random() * 1000) + 1;
                     usuarioConsultadoID = basedatos.getUsuarioById(Integer.toString(idRandom));
                 }
-                    Usuario nuevoUsuario = new Usuario(idRandom,NombreCompleto,UsuarioUnico,Contra);
+                    Usuario nuevoUsuario = new Usuario(idRandom,Nombre,Apellido,UsuarioUnico,Contra);
                     basedatos.saveUsuario(nuevoUsuario);
                     Navigation.findNavController(view).navigate(R.id.loginFragment);
                  }

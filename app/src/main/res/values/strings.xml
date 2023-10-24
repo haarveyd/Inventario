@@ -7,7 +7,7 @@
     <string name="USERLOGIN">USER</string>
     <string name="USERLOGIN2">User</string>
     <string name="PASSWORDLOGIN">Password</string>
-    <string name="RECOVERYLOGIN">Are you new user?</string>
+    <string name="RECOVERYLOGIN">Are you new user? Register</string>
     <string name="LOGINLOGIN">Login</string>
     <string name="FORGETLOGIN">Forget Password? Recovery it</string>
     <string name="SEARCHINGINVEN">Searching for....</string>
@@ -69,7 +69,4 @@
     <string name="editar_agregar" translatable="false">editar o agregar</string>
     <string name="agregar" translatable="false"> agregar</string>
     <string name="registrar" translatable="false"> Registarse</string>
-    <string name="historial">Historial</string>
-    <string name="Codigo">Codigo</string>
-    <string name="Quantity">Quantity</string>
 </resources>

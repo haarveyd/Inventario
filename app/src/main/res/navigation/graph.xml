@@ -60,9 +60,9 @@
         tools:layout="@layout/fragment_table" />
     <fragment
         android:id="@+id/productOutputFragment"
-        android:name="com.example.inventario.ProductOutputFragment"
+        android:name="com.example.inventario.UsersFragment"
         android:label="ProductOutputFragment"
-        tools:layout="@layout/fragment_productoutput" />
+        tools:layout="@layout/fragment_users" />
     <fragment
         android:id="@+id/productEntryFragment"
         android:name="com.example.inventario.ProductEntryFragment"
