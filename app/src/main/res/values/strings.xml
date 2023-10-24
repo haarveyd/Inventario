@@ -69,4 +69,12 @@
     <string name="editar_agregar" translatable="false">editar o agregar</string>
     <string name="agregar" translatable="false"> agregar</string>
     <string name="registrar" translatable="false"> Registarse</string>
+    <string name="input_idU">"Id Usuario "</string>
+    <string name="txt_user">Users</string>
+    <string name="txt_nombres">Nombre Usuario</string>
+    <string name="txt_User">User</string>
+    <string name="txt_id">Id</string>
+    <string name="txt_nombre">Nombre</string>
+    <string name="txt_apellido">Apellido</string>
+    <string name="txt_user2">Usuario</string>
 </resources>
