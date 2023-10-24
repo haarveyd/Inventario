@@ -176,7 +176,7 @@ public class InventarioDBHelper extends SQLiteOpenHelper {
                 new String[]{usuarioId});
     }
 
-    public int updateUsuario(Productos usuarioModificar, String usuarioId) {
+    public int updateUsuario(Usuario usuarioModificar, String usuarioId) {
         return getWritableDatabase().update(
                 UsuarioEntry.TABLE_NAME,
                 usuarioModificar.toContentValues(),

@@ -94,7 +94,7 @@ public class UsersFragment extends Fragment implements UsuarioAdapter.OnItemClic
 
     @Override
     public void onClick(UsuarioAdapter.ViewHolder view, Usuario usuarioactualizado) {
-        baseDatos.updateProducto(usuarioactualizado,String.valueOf(usuarioactualizado.getCodigo()));
+        baseDatos.updateUsuario(usuarioactualizado,String.valueOf(usuarioactualizado.getCodigo()));
         loadUsuario();
     }
     private void loadUsuario() {new UsuarioLoaderTask().execute( );}
