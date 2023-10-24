@@ -13,6 +13,6 @@ public class MovimientosContract {
         public static final String QUANTITY ="cantidad";
 
 
-
+//nsus
     }
 }
