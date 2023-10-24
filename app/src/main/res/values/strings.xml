@@ -70,4 +70,6 @@
     <string name="agregar" translatable="false"> agregar</string>
     <string name="registrar" translatable="false"> Registarse</string>
     <string name="historial">Historial</string>
+    <string name="Codigo">Codigo</string>
+    <string name="Quantity">Quantity</string>
 </resources>
