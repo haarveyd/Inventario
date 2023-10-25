@@ -47,17 +47,21 @@
             android:id="@+id/action_inventoryFragment_to_productEntryFragment"
             app:destination="@id/productEntryFragment" />
         <action
-            android:id="@+id/action_inventoryFragment_to_salesFragment"
-            app:destination="@id/salesFragment" />
-        <action
             android:id="@+id/action_inventoryFragment_to_tableFragment"
             app:destination="@id/tableFragment" />
+        <action
+            android:id="@+id/action_inventoryFragment_to_fragment_listaHistorial"
+            app:destination="@id/fragment_listaHistorial" />
     </fragment>
     <fragment
         android:id="@+id/tableFragment"
         android:name="com.example.inventario.TableFragment"
         android:label="TableFragment"
-        tools:layout="@layout/fragment_table" />
+        tools:layout="@layout/fragment_table" >
+        <action
+            android:id="@+id/action_tableFragment_to_editFragment"
+            app:destination="@id/editFragment" />
+    </fragment>
     <fragment
         android:id="@+id/productOutputFragment"
         android:name="com.example.inventario.UsersFragment"
@@ -69,8 +73,13 @@
         android:label="ProductEntryFragment"
         tools:layout="@layout/fragment_productentry" />
     <fragment
-        android:id="@+id/salesFragment"
-        android:name="com.example.inventario.SalesFragment"
-        android:label="SalesFragment"
-        tools:layout="@layout/fragment_sales" />
+        android:id="@+id/fragment_listaHistorial"
+        android:name="com.example.inventario.fragment_listaHistorial"
+        android:label="fragment_lista_historial"
+        tools:layout="@layout/fragment_lista_historial" />
+    <fragment
+        android:id="@+id/editFragment"
+        android:name="com.example.inventario.EditFragment"
+        android:label="fragment_edit"
+        tools:layout="@layout/fragment_edit" />
 </navigation>

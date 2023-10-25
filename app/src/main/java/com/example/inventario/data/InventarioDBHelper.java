@@ -34,9 +34,9 @@ public class InventarioDBHelper extends SQLiteOpenHelper {
 
         sqLiteDatabase.execSQL("CREATE TABLE " + MovimientosEntry.TABLE_NAME + " ("+
                 MovimientosEntry.IDMOV + " INTEGER PRIMARY KEY," +
-                MovimientosEntry.IDUSER+ " INTEGER NOT NULL," +
-                MovimientosEntry.IDPROD+ " INTEGER NOT NULL," +
-                MovimientosEntry.ACTION+ " INTEGER NOT NULL,"+
+                MovimientosEntry.NOMUSER+ " TEXT NOT NULL," +
+                MovimientosEntry.NOMPROD+ " TEXT NOT NULL," +
+                MovimientosEntry.ACTION+ " TEXT NOT NULL,"+
                 MovimientosEntry.QUANTITY + " INTEGER NOT NULL)");
     }
 //uwu
@@ -79,6 +79,17 @@ public class InventarioDBHelper extends SQLiteOpenHelper {
         return c;
     }
 
+    public Cursor getProductoByNAMEId(String productoId, String nombreprod) {
+        Cursor c = getReadableDatabase().query(
+                ProductosEntry.TABLE_NAME,
+                null,
+                ProductosEntry.CODIGO + " LIKE ? AND " + ProductosEntry.NAMEPROD + " LIKE ?",
+                new String[]{productoId, nombreprod},
+                null,
+                null,
+                null);
+        return c;
+    }
 
 
     public Cursor getProductoByName(String productoName) {

@@ -1,15 +1,21 @@
 package com.example.inventario;
 
 import android.content.Intent;
+import android.database.Cursor;
 import android.os.Bundle;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
+import androidx.navigation.Navigation;
 
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
+import android.widget.TextView;
+
+import com.example.inventario.data.InventarioDBHelper;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -31,6 +37,12 @@ public class InventoryFragment extends Fragment {
         // Required empty public constructor
     }
 
+
+    TextView nombre_intro;
+    Button entrada, user, inventario, historial;
+
+    Bundle bundle = new Bundle();
+    InventarioDBHelper database;
     /**
      * Use this factory method to create a new instance of
      * this fragment using the provided parameters.
@@ -68,6 +80,65 @@ public class InventoryFragment extends Fragment {
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
+        //declaracion de variables
+        nombre_intro= getView().findViewById(R.id.User_nameIntro);
+        entrada = getView().findViewById(R.id.Entrada_prod);
+        user= getView().findViewById(R.id.usuarios_list);
+        inventario= getView().findViewById(R.id.inventario_prod);
+        historial= getView().findViewById(R.id.historial_mov);
+
+        database = new InventarioDBHelper(getContext());
+
+        //recibo datos de login
+        String UserName = getArguments().getString("usuario");
+        //cursor para obtener el usuario y posicion de columna
+        Cursor obtenerUsuario = database.getUsuarioByUser(UserName);
+        int columnIndexNOM = obtenerUsuario.getColumnIndex("nomUsuario");
+        int columnIndexAP = obtenerUsuario.getColumnIndex("apUsuario");
+        if (columnIndexNOM != -1 && columnIndexAP != -1 && obtenerUsuario.moveToFirst()) {
+            String Nombre = obtenerUsuario.getString(columnIndexNOM);
+            String apellido = obtenerUsuario.getString(columnIndexAP);
+            nombre_intro.setText(Nombre+" "+ apellido);
+
+
+            entrada.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    bundle.putString("usuario2", Nombre+" "+apellido);
+                    Navigation.findNavController(view).navigate(R.id.productEntryFragment,bundle);
+                }
+            });
+
+            user.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+
+                }
+            });
+
+            inventario.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    Navigation.findNavController(view).navigate(R.id.tableFragment);
+                }
+            });
+
+
+            historial.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    Navigation.findNavController(view).navigate(R.id.fragment_listaHistorial);
+                }
+            });
+
+
+
+        }
+
+
+
+
+
     }
 
 }

@@ -24,43 +24,36 @@
                 android:layout_width="173dp"
                 android:layout_height="28dp"
                 android:layout_marginTop="4dp"
-                android:layout_marginEnd="16dp"
                 android:text="@string/nombre_producto"
                 android:textSize="20sp"
-                app:layout_constraintBottom_toTopOf="@+id/valor_lista"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintVertical_bias="1.0" />
+                app:layout_constraintStart_toEndOf="@+id/imageView14"
+                app:layout_constraintTop_toTopOf="parent" />
 
             <TextView
                 android:id="@+id/stock_lista"
-                android:layout_width="155dp"
+                android:layout_width="wrap_content"
                 android:layout_height="28dp"
                 android:text="@string/stock"
                 android:textSize="16sp"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.857"
-                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/imageView14"
                 app:layout_constraintTop_toBottomOf="@+id/valor_lista" />
 
             <TextView
                 android:id="@+id/valor_lista"
-                android:layout_width="152dp"
-                android:layout_height="21dp"
+                android:layout_width="wrap_content"
+                android:layout_height="0dp"
                 android:text="@string/valor"
                 android:textSize="16sp"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.823"
-                app:layout_constraintStart_toStartOf="parent"
-                tools:ignore="MissingConstraints"
-                tools:layout_editor_absoluteY="37dp" />
+                app:layout_constraintStart_toEndOf="@+id/imageView14"
+                app:layout_constraintTop_toBottomOf="@+id/nombre_lista"
+                tools:ignore="MissingConstraints" />
 
             <Button
                 android:id="@+id/button_editar"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="4dp"
-                android:layout_marginEnd="16dp"
+                android:layout_marginTop="32dp"
+                android:layout_marginEnd="24dp"
                 android:backgroundTint="#00FFFFFF"
                 android:text="@string/editar"
                 android:textColor="@color/black"
@@ -76,6 +69,48 @@
                 tools:ignore="MissingConstraints"
                 tools:layout_editor_absoluteX="4dp"
                 tools:layout_editor_absoluteY="5dp" />
+
+            <TextView
+                android:id="@+id/campoValor"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:text="0"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.011"
+                app:layout_constraintStart_toEndOf="@+id/valor_lista"
+                app:layout_constraintTop_toBottomOf="@+id/nombre_lista" />
+
+            <TextView
+                android:id="@+id/campoStock"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="2dp"
+                android:layout_marginTop="4dp"
+                android:text="0"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.09"
+                app:layout_constraintStart_toEndOf="@+id/stock_lista"
+                app:layout_constraintTop_toBottomOf="@+id/campoValor" />
+
+            <TextView
+                android:id="@+id/textView17"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="salidas:"
+                android:textSize="16dp"
+                app:layout_constraintStart_toEndOf="@+id/imageView14"
+                app:layout_constraintTop_toBottomOf="@+id/stock_lista" />
+
+            <TextView
+                android:id="@+id/campoSalida"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="4dp"
+                android:layout_marginTop="8dp"
+                android:text="0"
+                app:layout_constraintStart_toEndOf="@+id/textView17"
+                app:layout_constraintTop_toBottomOf="@+id/campoStock" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
 
