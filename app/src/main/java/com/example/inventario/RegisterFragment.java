@@ -83,7 +83,7 @@ public class RegisterFragment extends Fragment {
         nombre = (EditText)getView().findViewById(R.id.primerNombre);
         apellido = (EditText)getView().findViewById(R.id.Apellido);
         NomUsuario = (EditText)getView().findViewById(R.id.NombreUsuario);
-        nuevaContrase = (EditText)getView().findViewById(R.id.Passwordr);
+        nuevaContrase = (EditText)getView().findViewById(R.id.Password);
         Registro = (Button)getView().findViewById(R.id.RegistroUsuario);
 
         basedatos = new InventarioDBHelper(getContext());
@@ -94,10 +94,13 @@ public class RegisterFragment extends Fragment {
                 String Apellido = apellido.getText().toString();
                 String UsuarioUnico= NomUsuario.getText().toString();
                 int Password = Integer.parseInt(nuevaContrase.getText().toString());
-            int idRandom = (int) (Math.random() * 1000) + 1;
-
+                int idRandom = (int) (Math.random() * 1000) + 1;
                 Cursor usuarioConsultadoID = basedatos.getUsuarioById(Integer.toString(idRandom));
                 Cursor usuarioConsultadoUSER = basedatos.getUsuarioByUser(UsuarioUnico);
+                while (usuarioConsultadoID.moveToFirst()){
+                    idRandom = (int) (Math.random() * 1000) + 1;
+                    usuarioConsultadoID = basedatos.getUsuarioById(Integer.toString(idRandom));
+                }
                 if(usuarioConsultadoUSER.moveToFirst()){
                     Toast.makeText( getActivity(),"Ya existe ese nombre de usuario",Toast.LENGTH_LONG ).show();
                 }

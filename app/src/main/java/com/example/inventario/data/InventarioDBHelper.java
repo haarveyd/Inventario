@@ -27,6 +27,7 @@ public class InventarioDBHelper extends SQLiteOpenHelper {
         sqLiteDatabase.execSQL("CREATE TABLE " + UsuarioEntry.TABLE_NAME + " ("+
                 UsuarioEntry.ID + " INTEGER PRIMARY KEY," +
                 UsuarioEntry.NAME + " TEXT NOT NULL," +
+                UsuarioEntry.LASTNAME + " TEXT NOT NULL," +
                 UsuarioEntry.USER + " TEXT NOT NULL," +
                 UsuarioEntry.PASSWORD + " TEXT NOT NULL)"
         );

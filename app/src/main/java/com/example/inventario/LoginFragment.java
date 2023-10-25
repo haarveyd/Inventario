@@ -8,8 +8,6 @@ import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 import androidx.navigation.Navigation;
 
-import android.text.Editable;
-import android.text.TextWatcher;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -89,7 +87,7 @@ public class LoginFragment extends Fragment {
 
 
         user = (EditText) getView().findViewById(R.id.input_user);
-        password = (EditText) getView().findViewById(R.id.Passwordr);
+        password = (EditText) getView().findViewById(R.id.Password);
         registro = (Button) getView().findViewById(R.id.registro);
         login = (Button) getView().findViewById(R.id.RegistroUsuario);
 
