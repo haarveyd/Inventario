@@ -1,46 +1,89 @@
 package com.example.inventario.data;
 
-import android.content.Context;
+import android.database.Cursor;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ArrayAdapter;
 import android.widget.TextView;
-
 import com.example.inventario.R;
-import com.example.inventario.data.Productos;
 
-import java.util.List;
+import androidx.annotation.NonNull;
+import androidx.recyclerview.widget.RecyclerView;
 
-public class ProductosAdapter extends ArrayAdapter<Productos> {
-    public ProductosAdapter(Context context, List<Productos> objects){
-        super(context,0,objects);
+public class ProductosAdapter extends RecyclerView.Adapter<ProductosAdapter.ViewHolder> {
+
+
+    private Cursor cursorListaProductos;
+    private OnItemClickListener listenerClick;
+
+    public ProductosAdapter(OnItemClickListener listenerClick) {
+        this.listenerClick = listenerClick;
     }
-    @Override
-    public View getView(int position, View convertView, ViewGroup parent) {
-        LayoutInflater inflater = (LayoutInflater) getContext().getSystemService( Context.LAYOUT_INFLATER_SERVICE );
 
-        //Existe el view actual?
-        if (null == convertView){
-            convertView = inflater.inflate(
-                    R.layout.fragment_table,
-                    parent,
-                    false
-            );
+    interface OnItemClickListener{
+        public void onClick(ViewHolder view, Productos productoctualizado);
+    }
+
+    @NonNull
+    @Override
+    public ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+        View v = LayoutInflater.from( parent.getContext() ).inflate( R.layout.fragment_product,parent,false );
+        return new ViewHolder( v );
+    }
+
+    @Override
+    public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
+        cursorListaProductos.moveToPosition(position);
+        Productos productoSeleccionado = new Productos( cursorListaProductos );
+        holder.productList.setText(productoSeleccionado.getnomProducto().toString());
+        holder.stockList.setText(Integer.toString(productoSeleccionado.getStock()));
+        holder.valueList.setText(Float.toString(productoSeleccionado.getValorUnitario()));
+    }
+
+    @Override
+    public int getItemCount() {
+        if (cursorListaProductos!=null)
+            return cursorListaProductos.getCount();
+        return 0;
+    }
+
+    public void swapCursor(Cursor nuevoCursor){
+        if(nuevoCursor!=null){
+            cursorListaProductos = nuevoCursor;
+            notifyDataSetChanged();
+        }
+    }
+
+    public class ViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
+
+        TextView productList;
+        TextView stockList;
+
+        TextView valueList;
+
+        public ViewHolder(@NonNull View itemView) {
+            super( itemView );
+            productList = (TextView) itemView.findViewById( R.id.nombre_lista );
+            stockList = (TextView) itemView.findViewById( R.id.stock_lista );
+            valueList = (TextView) itemView.findViewById( R.id.valor_lista );
+            itemView.setOnClickListener( this );
         }
 
-        TextView nameList = (TextView) convertView.findViewById( R.id.nombre_lista );
-        TextView stockList = (TextView) convertView.findViewById( R.id.stock_lista );
-        TextView valueList = (TextView) convertView.findViewById( R.id.valor_lista );
+        @Override
+        public void onClick(View v) {
+            Productos productoActualizado = obtenerProducto( getAdapterPosition() );
+            productoActualizado.setnomProducto( "placeHolder" );
+            listenerClick.onClick( this,productoActualizado );
 
-        Productos productoActual = getItem( position );
-
-        nameList.setText(productoActual.getnomProducto());
-        stockList.setText(Integer.toString(productoActual.getStock()));
-        valueList.setText(Float.toString(productoActual.getValorUnitario()) );
-
-
-        return convertView;
+        }
     }
 
+    private Productos obtenerProducto(int posicion){
+        if (cursorListaProductos!=null){
+            cursorListaProductos.moveToPosition( posicion );
+            Productos nuevoUsuario = new Productos( cursorListaProductos );
+            return nuevoUsuario;
+        }
+        return null;
+    }
 }
