@@ -9,6 +9,7 @@ import android.widget.TextView;
 import com.example.inventario.R;
 
 import androidx.annotation.NonNull;
+import androidx.navigation.Navigation;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.inventario.TableFragment;
@@ -24,6 +25,8 @@ public class ProductosAdapter extends RecyclerView.Adapter<ProductosAdapter.View
     }
     public interface OnItemClickListener{
         public void onClick(ViewHolder view, Productos productoActualizado);
+
+
     }
 
     @NonNull

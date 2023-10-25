@@ -6,31 +6,31 @@ import android.database.Cursor;
 import com.example.inventario.data.MovimientosContract.MovimientosEntry;
 public class Movimientos {
         private int id_mov;
-        private int id_usuario;
-        private int id_producto;
-        private int accion;
+        private String NOMusuario;
+        private String NOMproducto;
+        private String accion;
         private int cantidad;
 
-        public Movimientos(int id_mov, int id_usuario, int id_producto, int accion, int cantidad) {
+        public Movimientos(int id_mov, String nomUsuario, String nomProducto, String accion, int cantidad) {
             this.id_mov = id_mov;
-            this.id_usuario = id_usuario;
-            this.id_producto = id_producto;
+            this.NOMusuario = nomUsuario;
+            this.NOMproducto = nomProducto;
             this.accion = accion;
             this.cantidad = cantidad;
         }
 
         public Movimientos(Cursor cursor) {
             id_mov= cursor.getInt(cursor.getColumnIndex(MovimientosEntry.IDMOV));
-            id_usuario= cursor.getInt(cursor.getColumnIndex(MovimientosEntry.IDUSER));
-            id_producto= cursor.getInt(cursor.getColumnIndex(MovimientosEntry.IDPROD));
-            accion= cursor.getInt(cursor.getColumnIndex(MovimientosEntry.ACTION));
+            NOMusuario= cursor.getString(cursor.getColumnIndex(MovimientosEntry.NOMUSER));
+            NOMproducto= cursor.getString(cursor.getColumnIndex(MovimientosEntry.NOMPROD));
+            accion= cursor.getString(cursor.getColumnIndex(MovimientosEntry.ACTION));
             cantidad= cursor.getInt(cursor.getColumnIndex(MovimientosEntry.QUANTITY));
         }
         public ContentValues toContentValues(){
             ContentValues Values = new ContentValues();
             Values.put(MovimientosEntry.IDMOV, id_mov);
-            Values.put(MovimientosEntry.IDUSER, id_usuario);
-            Values.put(MovimientosEntry.IDPROD, id_producto);
+            Values.put(MovimientosEntry.NOMUSER, NOMusuario);
+            Values.put(MovimientosEntry.NOMPROD, NOMproducto);
             Values.put(MovimientosEntry.ACTION, accion);
             Values.put(MovimientosEntry.QUANTITY, cantidad);
 
@@ -45,27 +45,27 @@ public class Movimientos {
         this.id_mov = id_mov;
     }
 
-    public int getId_usuario() {
-        return id_usuario;
+    public String getNOM_usuario() {
+        return NOMusuario;
     }
 
-    public void setId_usuario(int id_usuario) {
-        this.id_usuario = id_usuario;
+    public void setNOMusuario(String nomusuario) {
+        this.NOMusuario = nomusuario;
     }
 
-    public int getId_producto() {
-        return id_producto;
+    public String getNOMproducto() {
+        return NOMproducto;
     }
 
-    public void setId_producto(int id_producto) {
-        this.id_producto = id_producto;
+    public void setNOMproducto(String nomproducto) {
+        this.NOMproducto = nomproducto;
     }
 
-    public int getAccion() {
+    public String getAccion() {
         return accion;
     }
 
-    public void setAccion(int accion) {
+    public void setAccion(String accion) {
         this.accion = accion;
     }
 

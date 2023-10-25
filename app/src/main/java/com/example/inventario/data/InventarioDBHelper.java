@@ -34,9 +34,9 @@ public class InventarioDBHelper extends SQLiteOpenHelper {
 
         sqLiteDatabase.execSQL("CREATE TABLE " + MovimientosEntry.TABLE_NAME + " ("+
                 MovimientosEntry.IDMOV + " INTEGER PRIMARY KEY," +
-                MovimientosEntry.IDUSER+ " INTEGER NOT NULL," +
-                MovimientosEntry.IDPROD+ " INTEGER NOT NULL," +
-                MovimientosEntry.ACTION+ " INTEGER NOT NULL,"+
+                MovimientosEntry.NOMUSER+ " TEXT NOT NULL," +
+                MovimientosEntry.NOMPROD+ " TEXT NOT NULL," +
+                MovimientosEntry.ACTION+ " TEXT NOT NULL,"+
                 MovimientosEntry.QUANTITY + " INTEGER NOT NULL)");
     }
 //uwu

@@ -41,6 +41,7 @@ public class InventoryFragment extends Fragment {
     TextView nombre_intro;
     Button entrada, user, inventario, historial;
 
+    Bundle bundle = new Bundle();
     InventarioDBHelper database;
     /**
      * Use this factory method to create a new instance of
@@ -103,7 +104,8 @@ public class InventoryFragment extends Fragment {
             entrada.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    Navigation.findNavController(view).navigate(R.id.productEntryFragment);
+                    bundle.putString("usuario2", Nombre+" "+apellido);
+                    Navigation.findNavController(view).navigate(R.id.productEntryFragment,bundle);
                 }
             });
 

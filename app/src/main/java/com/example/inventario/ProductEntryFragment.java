@@ -6,6 +6,7 @@ import android.os.Bundle;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
+import androidx.navigation.Navigation;
 
 import android.view.LayoutInflater;
 import android.view.View;
@@ -16,6 +17,8 @@ import android.widget.Toast;
 
 import com.example.inventario.data.InventarioDBHelper;
 import com.example.inventario.data.Productos;
+import com.example.inventario.data.Movimientos;
+import com.example.inventario.data.Usuario;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -113,8 +116,18 @@ public class ProductEntryFragment extends Fragment {
                 else {
                 Productos nuevoProducto = new Productos(cod,nom,cant,0,valor);
                 database.saveProducto(nuevoProducto);
-            }
 
+                String UserName = getArguments().getString("usuario2");
+                int idRandom2 = (int) (Math.random() * 1000) + 1;
+                Cursor MovimientoConsultadoID = database.getMovimientoById(Integer.toString(idRandom2));
+                while (MovimientoConsultadoID.moveToFirst()){
+                    idRandom2 = (int) (Math.random() * 1000) + 1;
+                    MovimientoConsultadoID = database.getUsuarioById(Integer.toString(idRandom2));
+                }
+                Movimientos nuevoMovimiento = new Movimientos(idRandom2,UserName,nom,"agrego:",cant);
+                database.saveMovimiento(nuevoMovimiento);
+
+            }
 
         }
     });

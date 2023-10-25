@@ -108,13 +108,11 @@ public class RegisterFragment extends Fragment {
                     Toast.makeText( getActivity(),"Ya existe ese nombre de usuario",Toast.LENGTH_LONG ).show();
                 }
                 else {
-
                     Usuario nuevoUsuario = new Usuario(idRandom ,Nombre, Apellido, UsuarioUnico, Password);
                     basedatos.saveUsuario(nuevoUsuario);
                     Navigation.findNavController(view).navigate(R.id.loginFragment);
                  }
             }
         });
-
     }
 }
