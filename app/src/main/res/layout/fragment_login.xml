@@ -70,7 +70,7 @@
         app:layout_constraintTop_toBottomOf="@+id/imageView">
 
         <EditText
-            android:id="@+id/userTextField"
+            android:id="@+id/input_user"
             android:layout_width="match_parent"
             android:layout_height="50dp"
             android:layout_marginStart="24dp"
@@ -87,7 +87,7 @@
             android:textColorHint="#ffffff" />
 
         <EditText
-            android:id="@+id/NuevaContrasena"
+            android:id="@+id/Passwordr"
             android:layout_width="match_parent"
             android:layout_height="50dp"
             android:layout_marginStart="24dp"
@@ -98,7 +98,7 @@
             android:drawablePadding="16dp"
             android:ems="10"
             android:hint="@string/PASSWORDLOGIN"
-            android:inputType="textPassword"
+            android:inputType="number"
             android:padding="16dp"
             android:textColor="@color/white"
             android:textColorHint="#ffffff" />

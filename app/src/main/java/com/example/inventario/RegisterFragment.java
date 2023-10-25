@@ -17,9 +17,6 @@ import android.widget.Toast;
 
 import com.example.inventario.data.InventarioDBHelper;
 import com.example.inventario.data.Usuario;
-import com.example.inventario.data.UsuarioContract.UsuarioEntry;
-
-import java.util.Random;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -41,9 +38,9 @@ public class RegisterFragment extends Fragment {
         // Required empty public constructor
     }
 
-    EditText nombre,apellido,NomUsuario, nuevaContrase;
-    Button Registro;
-    InventarioDBHelper basedatos;
+    private EditText nombre,apellido,NomUsuario, nuevaContrase;
+    private Button Registro;
+    private InventarioDBHelper basedatos;
 
     /**
      * Use this factory method to create a new instance of
@@ -83,11 +80,11 @@ public class RegisterFragment extends Fragment {
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
 
-        nombre= getView().findViewById(R.id.primerNombre);
-        apellido= getView().findViewById(R.id.Apellido);
-        NomUsuario= getView().findViewById(R.id.NombreUsuario);
-        nuevaContrase= getView().findViewById(R.id.NuevaContrasena);
-        Registro=getView().findViewById(R.id.RegistroUsuario);
+        nombre = (EditText)getView().findViewById(R.id.primerNombre);
+        apellido = (EditText)getView().findViewById(R.id.Apellido);
+        NomUsuario = (EditText)getView().findViewById(R.id.NombreUsuario);
+        nuevaContrase = (EditText)getView().findViewById(R.id.Passwordr);
+        Registro = (Button)getView().findViewById(R.id.RegistroUsuario);
         basedatos = new InventarioDBHelper(getContext());
         Registro.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -95,7 +92,7 @@ public class RegisterFragment extends Fragment {
             String Nombre = nombre.getText().toString();
             String Apellido = apellido.getText().toString();
             String UsuarioUnico= NomUsuario.getText().toString();
-            String Contra = nuevaContrase.getText().toString();
+            String Password = nuevaContrase.getText().toString();
             int idRandom = (int) (Math.random() * 1000) + 1;
 
                 Cursor usuarioConsultadoID = basedatos.getUsuarioById(Integer.toString(idRandom));
@@ -109,7 +106,7 @@ public class RegisterFragment extends Fragment {
                     idRandom = (int) (Math.random() * 1000) + 1;
                     usuarioConsultadoID = basedatos.getUsuarioById(Integer.toString(idRandom));
                 }
-                    Usuario nuevoUsuario = new Usuario(idRandom,Nombre,Apellido,UsuarioUnico,Contra);
+                    Usuario nuevoUsuario = new Usuario(idRandom,Nombre,Apellido,UsuarioUnico,Password);
                     basedatos.saveUsuario(nuevoUsuario);
                     Navigation.findNavController(view).navigate(R.id.loginFragment);
                  }

@@ -72,7 +72,7 @@ public class LoginFragment extends Fragment {
 
     private Button registro, login;
 
-    InventarioDBHelper baseDatos;
+    private InventarioDBHelper baseDatos;
 
 
     @Override
@@ -86,27 +86,13 @@ public class LoginFragment extends Fragment {
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
-        nombre = view.findViewById(R.id.usuario);
-        user = view.findViewById(R.id.userTextField);
-        password= view.findViewById(R.id.NuevaContrasena);
-        registro = view.findViewById(R.id.registro);
-        login = view.findViewById(R.id.RegistroUsuario);
 
-        user.addTextChangedListener(new TextWatcher() {
-            @Override
-            public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {
-            }
 
-            @Override
-            public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {
-            }
+        user = (EditText) getView().findViewById(R.id.input_user);
+        password = (EditText) getView().findViewById(R.id.Passwordr);
+        registro = (Button) getView().findViewById(R.id.registro);
+        login = (Button) getView().findViewById(R.id.RegistroUsuario);
 
-            @Override
-            public void afterTextChanged(Editable editable) {
-                String usuarioinicial = user.getText().toString();
-                nombre.setText(usuarioinicial);
-            }
-        });
 
         baseDatos= new InventarioDBHelper(getContext());
         registro.setOnClickListener(new View.OnClickListener() {
@@ -115,6 +101,7 @@ public class LoginFragment extends Fragment {
                 Navigation.findNavController(view).navigate(R.id.registerFragment);
             }
         });
+
 
         login.setOnClickListener( new View.OnClickListener() {
             @Override
