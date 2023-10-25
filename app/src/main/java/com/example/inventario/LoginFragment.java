@@ -24,6 +24,7 @@ import com.example.inventario.data.InventarioDBHelper;
  * create an instance of this fragment.
  */
 public class LoginFragment extends Fragment {
+    Bundle bundle = new Bundle();
 
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -107,7 +108,8 @@ public class LoginFragment extends Fragment {
                 Cursor usuarioConsultado = baseDatos.getUsuarioByUserPassword( user.getText().toString(),
                         password.getText().toString());
                 if(usuarioConsultado.moveToFirst()){
-                    Navigation.findNavController(view).navigate(R.id.inventoryFragment);
+                    bundle.putString("usuario", user.getText().toString());
+                    Navigation.findNavController(view).navigate(R.id.inventoryFragment, bundle);
                 }else{
                     Toast.makeText( getActivity(),"Datos incorrectos",Toast.LENGTH_LONG ).show();
                 }

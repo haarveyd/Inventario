@@ -52,37 +52,14 @@
         android:hint="@string/input_cantidad" />
 
 
-    <RadioGroup
-        android:id="@+id/radioGroup"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="vertical">
-
-        <RadioButton
-            android:id="@+id/radioAlimentos"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/ITEM1" />
-
-        <RadioButton
-            android:id="@+id/radioHigiene"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/ITEM2" />
-
-        <RadioButton
-            android:id="@+id/radioAseo"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/ITEM3" />
-    </RadioGroup>
-
-    <TextView
-        android:id="@+id/resultadoTextView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/CATEGORYPROD"
-        android:textSize="18sp" />
+    <EditText
+        android:id="@+id/input_value"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:ems="10"
+        android:hint="@string/valor_unitario"
+        android:inputType="numberDecimal" />
 
     <Button
         android:id="@+id/registrar"
@@ -95,31 +72,17 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
 
-        <Button
-            android:id="@+id/button5"
-            android:layout_width="48dp"
-            android:layout_height="48dp"
-            android:layout_marginStart="4dp"
-            android:background="#ffff"
-            android:onClick="nextActivity6"
-            android:text="b"
-            android:textColor="#757575"
-            app:iconTint="#ffff"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.0" />
-
-        <ImageView
+        <ImageButton
             android:id="@+id/imageView12"
             android:layout_width="51dp"
             android:layout_height="48dp"
             android:layout_marginStart="4dp"
+            android:background="@drawable/back_1"
+            android:src="@drawable/bottom_btn1"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.0"
-            app:srcCompat="@drawable/bottom_btn1" />
+            app:layout_constraintVertical_bias="0.0" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 
 

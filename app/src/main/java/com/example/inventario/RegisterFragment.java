@@ -97,10 +97,13 @@ public class RegisterFragment extends Fragment {
                 int idRandom = (int) (Math.random() * 1000) + 1;
                 Cursor usuarioConsultadoID = basedatos.getUsuarioById(Integer.toString(idRandom));
                 Cursor usuarioConsultadoUSER = basedatos.getUsuarioByUser(UsuarioUnico);
+
+                //garantizar que no se repita un id
                 while (usuarioConsultadoID.moveToFirst()){
                     idRandom = (int) (Math.random() * 1000) + 1;
                     usuarioConsultadoID = basedatos.getUsuarioById(Integer.toString(idRandom));
                 }
+
                 if(usuarioConsultadoUSER.moveToFirst()){
                     Toast.makeText( getActivity(),"Ya existe ese nombre de usuario",Toast.LENGTH_LONG ).show();
                 }

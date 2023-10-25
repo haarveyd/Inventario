@@ -60,8 +60,8 @@
     <string name="acepto_los_t_rminos_y_condiciones" translatable="false">Acepto los Términos y Condiciones</string>
     <string name="bienvenido" translatable="false">¡Bienvenido!</string>
     <string name="nombre_producto" translatable="false">nombre</string>
-    <string name="stock" translatable="false">stock</string>
-    <string name="valor" translatable="false">valor</string>
+    <string name="stock" translatable="false">stock:</string>
+    <string name="valor" translatable="false">valor:</string>
     <string name="editar" translatable="false">editar</string>
     <string name="nombre_prod" translatable="false">nombre producto</string>
     <string name="stock_prod" translatable="false">stock producto</string>
@@ -80,4 +80,5 @@
     <string name="txt_user2">Usuario</string>
     <string name="txt_id2">Id</string>
     <string name="txt_id">Id</string>
+    <string name="valor_unitario">valor unitario</string>
 </resources>

@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:background="#DCDCF2"
     android:scrollbarSize="16sp"
-    tools:context=".Inventory">
+    tools:context=".InventoryFragment">
 
     <androidx.coordinatorlayout.widget.CoordinatorLayout
         android:layout_width="match_parent"
@@ -236,7 +236,7 @@
                             android:background="@drawable/background_btn_2">
 
                             <Button
-                                android:id="@+id/entry3"
+                                android:id="@+id/Entrada_prod"
                                 android:layout_width="68dp"
                                 android:layout_height="48dp"
                                 android:onClick="nextActivity2"
@@ -296,7 +296,7 @@
                             android:background="@drawable/background_btn_2">
 
                             <Button
-                                android:id="@+id/entry4"
+                                android:id="@+id/usuarios_list"
                                 android:layout_width="68dp"
                                 android:layout_height="48dp"
                                 android:onClick="nextActivity3"
@@ -321,8 +321,10 @@
                                 android:layout_width="64dp"
                                 android:layout_height="57dp"
                                 android:src="@drawable/user_interface"
-                                tools:layout_editor_absoluteX="18dp"
-                                tools:layout_editor_absoluteY="16dp" />
+                                app:layout_constraintBottom_toBottomOf="@+id/imageView22"
+                                app:layout_constraintEnd_toEndOf="@+id/imageView22"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toTopOf="@+id/imageView22" />
 
                         </androidx.constraintlayout.widget.ConstraintLayout>
 
@@ -361,7 +363,7 @@
                             android:background="@drawable/background_btn_2">
 
                             <Button
-                                android:id="@+id/entry3"
+                                android:id="@+id/inventario_prod"
                                 android:layout_width="68dp"
                                 android:layout_height="48dp"
                                 android:onClick="nextActivity4"
@@ -370,8 +372,7 @@
                                 app:layout_constraintEnd_toEndOf="@+id/imageView21"
                                 app:layout_constraintStart_toStartOf="parent"
                                 app:layout_constraintTop_toTopOf="@+id/imageView21"
-                                app:layout_constraintVertical_bias="0.534"
-                                tools:ignore="DuplicateIds" />
+                                app:layout_constraintVertical_bias="0.534" />
 
                             <ImageView
                                 android:id="@+id/imageView21"
@@ -423,7 +424,7 @@
                             android:background="@drawable/background_btn_2">
 
                             <Button
-                                android:id="@+id/entry4"
+                                android:id="@+id/historial_mov"
                                 android:layout_width="68dp"
                                 android:layout_height="48dp"
                                 android:onClick="nextActivity5"

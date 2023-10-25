@@ -1,6 +1,6 @@
 package com.example.inventario;
 
-import android.graphics.Color;
+import android.database.Cursor;
 import android.os.Bundle;
 
 import androidx.annotation.NonNull;
@@ -10,10 +10,12 @@ import androidx.fragment.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.RadioButton;
-import android.widget.RadioGroup;
-import android.widget.Spinner;
-import android.widget.TextView;
+import android.widget.Button;
+import android.widget.EditText;
+import android.widget.Toast;
+
+import com.example.inventario.data.InventarioDBHelper;
+import com.example.inventario.data.Productos;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -21,12 +23,11 @@ import android.widget.TextView;
  * create an instance of this fragment.
  */
 public class ProductEntryFragment extends Fragment {
-    TextView textoregistrar;
-    Spinner categoria;
+    EditText NombreRegistro, CodigoRegistro, CantidadRegistro,ValorRegistro;
 
-    private RadioGroup radioGroup;
-    private TextView resultadoTextView;
+    InventarioDBHelper database;
 
+    Button enviar;
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
     private static final String ARG_PARAM1 = "param1";
@@ -81,24 +82,42 @@ public class ProductEntryFragment extends Fragment {
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
 
-        textoregistrar = view.findViewById(R.id.texto_registrar);
-        radioGroup = view.findViewById(R.id.radioGroup);
-        resultadoTextView = view.findViewById(R.id.resultadoTextView);
+    NombreRegistro = getView().findViewById(R.id.input_usuario);
+    CodigoRegistro = getView().findViewById(R.id.input_Code);
+    CantidadRegistro = getView().findViewById(R.id.input_Quantity);
+    ValorRegistro= getView().findViewById(R.id.input_value);
+    database = new InventarioDBHelper(getContext());
+    enviar= getView().findViewById(R.id.registrar);
 
-        radioGroup.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
-            @Override
-            public void onCheckedChanged(RadioGroup group, int checkedId) {
-                RadioButton radioButton = view.findViewById(checkedId);
-                if (radioButton != null) {
-                    String opcionSeleccionada = radioButton.getText().toString();
-                    resultadoTextView.setText("Category/Categoria: " + opcionSeleccionada);
-                }
+
+
+    enviar.setOnClickListener(new View.OnClickListener() {
+        @Override
+        public void onClick(View v) {
+
+            String nom=NombreRegistro.getText().toString();
+            int cod=Integer.parseInt(CodigoRegistro.getText().toString());
+            int cant=Integer.parseInt(CantidadRegistro.getText().toString());
+            int valor=Integer.parseInt(ValorRegistro.getText().toString());
+            Cursor productoConsultado = database.getProductoByNAMEId(CodigoRegistro.getText().toString(),NombreRegistro.getText().toString());
+            Cursor productoConsultadoID = database.getProductoById(CodigoRegistro.getText().toString());
+            Cursor productoConsultadoNAME = database.getProductoByName(CodigoRegistro.getText().toString());
+            if(productoConsultado.moveToFirst()){
+                Toast.makeText( getActivity(),"Ya existe ese ID y Nombre",Toast.LENGTH_LONG ).show();
             }
-        });
+                else if(productoConsultadoID.moveToFirst()){
+                        Toast.makeText( getActivity(),"Ya existe ese ID",Toast.LENGTH_LONG ).show();
+                    } else if (productoConsultadoNAME.moveToFirst()){
+                        Toast.makeText( getActivity(),"Ya existe ese NOMBRE",Toast.LENGTH_LONG ).show();
+                    }
+                else {
+                Productos nuevoProducto = new Productos(cod,nom,cant,0,valor);
+                database.saveProducto(nuevoProducto);
+            }
+
+
+        }
+    });
     }
 
-    public void cambiarColorTexto1() {
-        textoregistrar.setTextColor(Color.GREEN);
-        textoregistrar.setText("REGISTRATION SUCCESSFUL/ REGISTRO EXITOSO");
-    }
 }

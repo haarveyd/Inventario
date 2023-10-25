@@ -79,6 +79,17 @@ public class InventarioDBHelper extends SQLiteOpenHelper {
         return c;
     }
 
+    public Cursor getProductoByNAMEId(String productoId, String nombreprod) {
+        Cursor c = getReadableDatabase().query(
+                ProductosEntry.TABLE_NAME,
+                null,
+                ProductosEntry.CODIGO + " LIKE ? AND " + ProductosEntry.NAMEPROD + " LIKE ?",
+                new String[]{productoId, nombreprod},
+                null,
+                null,
+                null);
+        return c;
+    }
 
 
     public Cursor getProductoByName(String productoName) {
