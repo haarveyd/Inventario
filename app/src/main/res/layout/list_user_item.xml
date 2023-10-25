@@ -50,7 +50,7 @@
         android:id="@+id/txt_id2"
         android:layout_width="20dp"
         android:layout_height="23dp"
-        android:text="@string/txt_id"
+        android:text="@string/txt_id2"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="@+id/txt_id"
