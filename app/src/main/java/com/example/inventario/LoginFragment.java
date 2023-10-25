@@ -104,8 +104,7 @@ public class LoginFragment extends Fragment {
         login.setOnClickListener( new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Cursor usuarioConsultado = baseDatos.getUsuarioByUserPassword( user.getText().toString(),
-                        password.getText().toString());
+                Cursor usuarioConsultado = baseDatos.getUsuarioByUserPassword( user.getText().toString(), password.getText().toString());
                 if(usuarioConsultado.moveToFirst()){
                     Navigation.findNavController(view).navigate(R.id.inventoryFragment);
                 }else{
