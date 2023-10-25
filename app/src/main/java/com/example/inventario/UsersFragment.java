@@ -7,14 +7,12 @@ import android.os.Bundle;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
-import androidx.navigation.Navigation;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-
 
 import com.example.inventario.data.InventarioDBHelper;
 import com.example.inventario.data.Usuario;
@@ -24,12 +22,12 @@ import com.example.inventario.data.Usuario;
  * Use the {@link UsersFragment#newInstance} factory method to
  * create an instance of this fragment.
  */
-public class UsersFragment extends Fragment implements UsuarioAdapter.OnItemClickListener {
-
+public class UsersFragment extends Fragment implements UsuarioAdapter.OnItemClickListener{
     private RecyclerView listaPersonas;
     private InventarioDBHelper baseDatos;
     private LinearLayoutManager linearLayoutManager;
     private UsuarioAdapter usuariosAdapter;
+
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
     private static final String ARG_PARAM1 = "param1";
@@ -70,13 +68,11 @@ public class UsersFragment extends Fragment implements UsuarioAdapter.OnItemClic
         }
     }
 
-
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_users, container, false);
-
+        return inflater.inflate(R.layout.fragment_user, container, false);
     }
 
     @Override
@@ -91,14 +87,13 @@ public class UsersFragment extends Fragment implements UsuarioAdapter.OnItemClic
         listaPersonas.setAdapter( usuariosAdapter );
         loadUsuario();
     }
-
     @Override
     public void onClick(UsuarioAdapter.ViewHolder view, Usuario usuarioactualizado) {
         baseDatos.updateUsuario(usuarioactualizado,String.valueOf(usuarioactualizado.getCodigo()));
         loadUsuario();
     }
-    private void loadUsuario() {new UsuarioLoaderTask().execute( );}
 
+    private void loadUsuario() {new UsuarioLoaderTask().execute( );}
     private class UsuarioLoaderTask extends AsyncTask<Void, Void, Cursor> {
 
         @Override
@@ -113,5 +108,4 @@ public class UsersFragment extends Fragment implements UsuarioAdapter.OnItemClic
             }
         }
     }
-
 }

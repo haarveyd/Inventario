@@ -112,7 +112,7 @@ public class InventoryFragment extends Fragment {
             user.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-
+                    Navigation.findNavController(view).navigate(R.id.input_user);
                 }
             });
 
