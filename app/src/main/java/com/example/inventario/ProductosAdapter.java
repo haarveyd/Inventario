@@ -1,11 +1,12 @@
-package com.example.inventario.data;
+package com.example.inventario;
 
 import android.database.Cursor;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
-import com.example.inventario.R;
+
+import com.example.inventario.data.Productos;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
