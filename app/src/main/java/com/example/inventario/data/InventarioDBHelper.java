@@ -9,7 +9,7 @@ import com.example.inventario.data.UsuarioContract.UsuarioEntry;
 import com.example.inventario.data.MovimientosContract.MovimientosEntry;
 public class InventarioDBHelper extends SQLiteOpenHelper {
     public static final int DATABASE_VERSION = 1;
-    public static final String DATABASE_NAME = "Inventario.db";
+    public static final String DATABASE_NAME = "Inventario.bd";
 
     public InventarioDBHelper(Context context){
         super(context, DATABASE_NAME, null, DATABASE_VERSION);
@@ -26,10 +26,10 @@ public class InventarioDBHelper extends SQLiteOpenHelper {
 
         sqLiteDatabase.execSQL("CREATE TABLE " + UsuarioEntry.TABLE_NAME + " ("+
                 UsuarioEntry.ID + " INTEGER PRIMARY KEY," +
-                UsuarioEntry.NAME+ " TEXT NOT NULL," +
-                UsuarioEntry.LASTNAME+ "TEXT NOT NULL," +
-                UsuarioEntry.USER+ " TEXT NOT NULL," +
-                UsuarioEntry.PASSWORD+ " TEXT NOT NULL)");
+                UsuarioEntry.NAME + " TEXT NOT NULL," +
+                UsuarioEntry.USER + " TEXT NOT NULL," +
+                UsuarioEntry.PASSWORD + " TEXT NOT NULL)"
+        );
 
         sqLiteDatabase.execSQL("CREATE TABLE " + MovimientosEntry.TABLE_NAME + " ("+
                 MovimientosEntry.IDMOV + " INTEGER PRIMARY KEY," +
