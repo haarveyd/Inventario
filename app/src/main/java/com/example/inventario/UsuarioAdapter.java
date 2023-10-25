@@ -61,7 +61,6 @@ public class UsuarioAdapter extends RecyclerView.Adapter<UsuarioAdapter.ViewHold
         TextView nombre;
         TextView apellido;
         TextView user;
-        TextView password;
 
         public ViewHolder(@NonNull View itemView) {
             super( itemView );
