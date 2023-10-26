@@ -61,17 +61,28 @@
         <action
             android:id="@+id/action_tableFragment_to_editFragment"
             app:destination="@id/editFragment" />
+        <action
+            android:id="@+id/action_tableFragment_to_inventoryFragment"
+            app:destination="@id/inventoryFragment" />
     </fragment>
     <fragment
         android:id="@+id/productEntryFragment"
         android:name="com.example.inventario.ProductEntryFragment"
         android:label="ProductEntryFragment"
-        tools:layout="@layout/fragment_productentry" />
+        tools:layout="@layout/fragment_productentry" >
+        <action
+            android:id="@+id/action_productEntryFragment_to_inventoryFragment"
+            app:destination="@id/inventoryFragment" />
+    </fragment>
     <fragment
         android:id="@+id/fragment_listaHistorial"
         android:name="com.example.inventario.fragment_listaHistorial"
         android:label="fragment_lista_historial"
-        tools:layout="@layout/fragment_lista_historial" />
+        tools:layout="@layout/fragment_lista_historial" >
+        <action
+            android:id="@+id/action_fragment_listaHistorial_to_inventoryFragment"
+            app:destination="@id/inventoryFragment" />
+    </fragment>
     <fragment
         android:id="@+id/editFragment"
         android:name="com.example.inventario.EditFragment"
@@ -81,5 +92,9 @@
         android:id="@+id/usersFragment"
         android:name="com.example.inventario.UsersFragment"
         android:label="fragment_user"
-        tools:layout="@layout/fragment_user" />
+        tools:layout="@layout/fragment_user" >
+        <action
+            android:id="@+id/action_usersFragment_to_inventoryFragment"
+            app:destination="@id/inventoryFragment" />
+    </fragment>
 </navigation>
