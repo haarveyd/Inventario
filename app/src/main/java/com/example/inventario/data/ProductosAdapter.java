@@ -40,7 +40,7 @@ public class ProductosAdapter extends RecyclerView.Adapter<ProductosAdapter.View
         holder.productList.setText(productoSeleccionado.getnomProducto().toString());
         holder.stockList.setText(Integer.toString(productoSeleccionado.getStock()));
         holder.valueList.setText(Integer.toString(productoSeleccionado.getValorUnitario()));
-        holder.exitList.setText(Integer.toString(productoSeleccionado.getSalidas()));
+        holder.viewid.setText(Integer.toString(productoSeleccionado.getCodigo()));
     }
 
     @Override
@@ -64,14 +64,14 @@ public class ProductosAdapter extends RecyclerView.Adapter<ProductosAdapter.View
 
         TextView valueList;
 
-        TextView exitList;
+        TextView viewid;
 
         public ViewHolder(@NonNull View itemView) {
             super( itemView );
             productList = (TextView) itemView.findViewById( R.id.nombre_lista );
             stockList = (TextView) itemView.findViewById( R.id.campoStock );
             valueList = (TextView) itemView.findViewById( R.id.campoValor );
-            //exitList= (TextView) itemView.findViewById( R.id.campoSalida );
+            viewid= (TextView) itemView.findViewById( R.id.campoid);
         }
 
         @Override
