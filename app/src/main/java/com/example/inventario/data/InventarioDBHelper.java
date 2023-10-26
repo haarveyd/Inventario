@@ -247,4 +247,27 @@ public class InventarioDBHelper extends SQLiteOpenHelper {
         );
     }
 
+    public Productos getProductById(int productoId) {
+        SQLiteDatabase db = getReadableDatabase();
+        Productos product = null;
+
+        Cursor cursor = db.query(
+                ProductosEntry.TABLE_NAME,
+                null,
+                ProductosEntry.CODIGO + " = ?",
+                new String[]{String.valueOf(productoId)},
+                null,
+                null,
+                null
+        );
+
+        if (cursor != null && cursor.moveToFirst()) {
+            product = new Productos(cursor);
+            cursor.close();
+        }
+
+        return product;
+    }
+
+
 }

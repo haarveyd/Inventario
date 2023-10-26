@@ -27,29 +27,16 @@ public class TableFragment extends Fragment implements ProductosAdapter.OnItemCl
     private InventarioDBHelper bdInventario;
     private LinearLayoutManager linearLayoutManager;
     private ProductosAdapter adaptadorProducto;
-
-    // TODO: Rename parameter arguments, choose names that match
-    // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
     private static final String ARG_PARAM1 = "param1";
     private static final String ARG_PARAM2 = "param2";
-
-    // TODO: Rename and change types of parameters
     private String mParam1;
     private String mParam2;
+    private ImageButton homee;
 
     public TableFragment() {
         // Required empty public constructor
     }
 
-    /**
-     * Use this factory method to create a new instance of
-     * this fragment using the provided parameters.
-     *
-     * @param param1 Parameter 1.
-     * @param param2 Parameter 2.
-     * @return A new instance of fragment TableFragment.
-     */
-    // TODO: Rename and change types and number of parameters
     public static TableFragment newInstance(String param1, String param2) {
         TableFragment fragment = new TableFragment();
         Bundle args = new Bundle();
@@ -69,12 +56,10 @@ public class TableFragment extends Fragment implements ProductosAdapter.OnItemCl
     }
 
     @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container,
-                             Bundle savedInstanceState) {
-        // Inflate the layout for this fragment
+    public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         return inflater.inflate(R.layout.fragment_table, container, false);
     }
-    private ImageButton homee;
+
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
@@ -88,26 +73,25 @@ public class TableFragment extends Fragment implements ProductosAdapter.OnItemCl
             }
         });
 
-        listaUsuarios = (RecyclerView) getView().findViewById( R.id.recyclerListaProductos );
-        bdInventario = new InventarioDBHelper( getContext() );
+        listaUsuarios = (RecyclerView) getView().findViewById(R.id.recyclerListaProductos);
+        bdInventario = new InventarioDBHelper(getContext());
 
-        listaUsuarios.setHasFixedSize( true );
-        linearLayoutManager = new LinearLayoutManager( getContext() );
-        listaUsuarios.setLayoutManager( linearLayoutManager );
-        adaptadorProducto = new ProductosAdapter( this );
-        listaUsuarios.setAdapter( adaptadorProducto );
+        listaUsuarios.setHasFixedSize(true);
+        linearLayoutManager = new LinearLayoutManager(getContext());
+        listaUsuarios.setLayoutManager(linearLayoutManager);
+        adaptadorProducto = new ProductosAdapter(this);
+        listaUsuarios.setAdapter(adaptadorProducto);
         loadProductos();
     }
 
-
     @Override
     public void onClick(ProductosAdapter.ViewHolder view, Productos productoActualizado) {
-        bdInventario.updateProducto(productoActualizado,String.valueOf(productoActualizado.getCodigo()));
+        bdInventario.updateProducto(productoActualizado, String.valueOf(productoActualizado.getCodigo()));
         loadProductos();
     }
 
     private void loadProductos() {
-        new ProductosLoaderTask().execute( );
+        new ProductosLoaderTask().execute();
     }
 
     private class ProductosLoaderTask extends AsyncTask<Void, Void, Cursor> {
@@ -120,7 +104,7 @@ public class TableFragment extends Fragment implements ProductosAdapter.OnItemCl
         @Override
         protected void onPostExecute(Cursor cursor) {
             if (cursor != null && cursor.getCount() > 0) {
-                adaptadorProducto.swapCursor( cursor );
+                adaptadorProducto.swapCursor(cursor);
             }
         }
     }

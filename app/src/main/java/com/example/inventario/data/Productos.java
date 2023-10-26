@@ -38,42 +38,52 @@ public class Productos {
     }
 
     public int getCodigo() {
+
         return codigo;
     }
 
     public void setCodigo(int codigo) {
+
         this.codigo = codigo;
     }
 
     public String getnomProducto() {
+
         return nomProducto;
     }
 
     public void setnomProducto(String nomProducto) {
+
         nomProducto = nomProducto;
     }
 
     public int getStock() {
+
         return stock;
     }
 
     public void setStock(int stock) {
+
         this.stock = stock;
     }
 
     public int getSalidas() {
+
         return salidas;
     }
 
     public void setSalidas(int salidas) {
+
         this.salidas = salidas;
     }
 
     public int getValorUnitario() {
+
         return valorUnitario;
     }
 
     public void setValorUnitario(int valorUnitario) {
+
         this.valorUnitario = valorUnitario;
     }
 }
