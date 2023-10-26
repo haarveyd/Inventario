@@ -17,10 +17,10 @@ public class ProductFragment extends Fragment {
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-        View view = inflater.inflate(R.layout.fragment_product, container, false);
+        View view = inflater.inflate(R.layout.list_product_item, container, false);
 
 
-        Button editarButton = view.findViewById(R.id.button_editar);
+        Button editarButton = getView().findViewById(R.id.button_editar);
 
 
         editarButton.setOnClickListener(new View.OnClickListener() {

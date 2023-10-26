@@ -90,26 +90,20 @@ public class InventoryFragment extends Fragment {
         database = new InventarioDBHelper(getContext());
         String UserName;
         //recibo datos de login
-
-        if (bundle != null) {
-            UserName = bundle.getString("usuario");
-            Cursor obtenerUsuario = database.getUsuarioByUser(UserName);
-            //cursor para obtener el usuario y posicion de columna
-            int columnIndexNOM = obtenerUsuario.getColumnIndex("nomUsuario");
-            int columnIndexAP = obtenerUsuario.getColumnIndex("apUsuario");
-            if (columnIndexNOM != -1 && columnIndexAP != -1 && obtenerUsuario.moveToFirst()) {
-                String Nombre = obtenerUsuario.getString(columnIndexNOM);
-                String apellido = obtenerUsuario.getString(columnIndexAP);
-                nombre_intro.setText(Nombre+" "+ apellido);
-        } else {
-            UserName="default";
-        }
-
+        UserName = getArguments().getString("usuario");
+        //cursor para obtener el usuario y posicion de columna
+        Cursor obtenerUsuario = database.getUsuarioByUser(UserName);
+        int columnIndexNOM = obtenerUsuario.getColumnIndex("nomUsuario");
+        int columnIndexAP = obtenerUsuario.getColumnIndex("apUsuario");
+        if (columnIndexNOM != -1 && columnIndexAP != -1 && obtenerUsuario.moveToFirst()) {
+            String Nombre = obtenerUsuario.getString(columnIndexNOM);
+            String apellido = obtenerUsuario.getString(columnIndexAP);
 
 
             entrada.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
+
                     bundle.putString("usuario2", Nombre+" "+apellido);
                     Navigation.findNavController(view).navigate(R.id.productEntryFragment,bundle);
                 }
