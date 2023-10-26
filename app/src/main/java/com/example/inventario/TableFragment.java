@@ -65,14 +65,7 @@ public class TableFragment extends Fragment implements ProductosAdapter.OnItemCl
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
 
-        homee = (ImageButton) getView().findViewById(R.id.btn_home);
-        homee.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
 
-                Navigation.findNavController(view).navigate(R.id.inventoryFragment);
-            }
-        });
 
         listaUsuarios = (RecyclerView) getView().findViewById(R.id.recyclerListaProductos);
         bdInventario = new InventarioDBHelper(getContext());

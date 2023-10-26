@@ -102,19 +102,19 @@ public class InventoryFragment extends Fragment {
                     String Nombre = obtenerUsuario.getString(columnIndexNOM);
                     String apellido = obtenerUsuario.getString(columnIndexAP);
                     nombre_intro.setText(Nombre + " " + apellido);
+                    entrada.setOnClickListener(new View.OnClickListener() {
+                        @Override
+                        public void onClick(View v) {
 
+                            bundle.putString("usuario2",Nombre+" "+apellido );
+                            Navigation.findNavController(view).navigate(R.id.productEntryFragment,bundle);
+                        }
+                    });
                 }
             }
         }
 
-        entrada.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
 
-                bundle.putString("usuario2","Pepe Gommez" );
-                Navigation.findNavController(view).navigate(R.id.productEntryFragment,bundle);
-            }
-        });
         user.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

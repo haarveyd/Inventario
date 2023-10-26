@@ -62,7 +62,7 @@ public class fragment_listaHistorial extends Fragment implements MovimientosAdap
 
         return inflater.inflate(R.layout.fragment_lista_historial, container, false);
     }
-    Bundle bundle = new Bundle();
+
 
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
@@ -77,13 +77,7 @@ public class fragment_listaHistorial extends Fragment implements MovimientosAdap
         adaptadorMovimientos = new MovimientosAdapter( this );
         listaMovimientos.setAdapter( adaptadorMovimientos );
         loadMovimientos();
-        homee = view.findViewById(R.id.btn_home);
-        homee.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Navigation.findNavController(view).navigate(R.id.inventoryFragment);
-            }
-        });
+
     }
 
 

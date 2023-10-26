@@ -87,14 +87,6 @@ public class ProductEntryFragment extends Fragment {
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
-        homee = (ImageButton) getView().findViewById(R.id.btn_home);
-        homee.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Navigation.findNavController(view).navigate(R.id.inventoryFragment);
-
-            }
-        });
 
     NombreRegistro = getView().findViewById(R.id.input_usuario);
     CodigoRegistro = getView().findViewById(R.id.input_Code);
