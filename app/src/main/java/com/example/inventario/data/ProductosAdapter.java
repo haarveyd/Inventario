@@ -6,10 +6,10 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
-import com.example.inventario.R;
-
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
+
+import com.example.inventario.R;
 
 public class ProductosAdapter extends RecyclerView.Adapter<ProductosAdapter.ViewHolder> {
 
@@ -22,8 +22,6 @@ public class ProductosAdapter extends RecyclerView.Adapter<ProductosAdapter.View
     }
     public interface OnItemClickListener{
         public void onClick(ViewHolder view, Productos productoActualizado);
-
-
     }
 
     @NonNull
@@ -64,7 +62,7 @@ public class ProductosAdapter extends RecyclerView.Adapter<ProductosAdapter.View
 
         TextView valueList;
 
-        TextView exitList;
+       // TextView exitList;
 
         public ViewHolder(@NonNull View itemView) {
             super( itemView );
@@ -72,14 +70,13 @@ public class ProductosAdapter extends RecyclerView.Adapter<ProductosAdapter.View
             stockList = (TextView) itemView.findViewById( R.id.campoStock );
             valueList = (TextView) itemView.findViewById( R.id.campoValor );
             //exitList= (TextView) itemView.findViewById( R.id.campoSalida );
+            itemView.setOnClickListener( this );
         }
 
         @Override
         public void onClick(View v) {
             Productos productoActualizado = obtenerProducto( getAdapterPosition() );
-            productoActualizado.setnomProducto( "placeHolder" );
             listenerClickpro.onClick( this,productoActualizado );
-
         }
     }
 

@@ -80,8 +80,10 @@ public class TableFragment extends Fragment implements ProductosAdapter.OnItemCl
 
     @Override
     public void onClick(ProductosAdapter.ViewHolder view, Productos productoActualizado) {
+        System.out.println("Emtro");
         bdInventario.updateProducto(productoActualizado, String.valueOf(productoActualizado.getCodigo()));
         loadProductos();
+        Navigation.findNavController(getView()).navigate(R.id.editFragment);
     }
 
     private void loadProductos() {
