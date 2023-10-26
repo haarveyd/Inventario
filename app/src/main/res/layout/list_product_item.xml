@@ -45,6 +45,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="0dp"
                 android:layout_marginStart="8dp"
+                android:layout_marginTop="8dp"
                 android:text="@string/valor"
                 android:textSize="16sp"
                 app:layout_constraintStart_toEndOf="@+id/imageView14"
@@ -56,6 +57,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="20dp"
+                android:layout_marginTop="8dp"
                 android:text="0"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.0"
@@ -67,6 +69,7 @@
                 android:layout_width="47dp"
                 android:layout_height="21dp"
                 android:layout_marginStart="8dp"
+                android:layout_marginTop="8dp"
                 android:text="@string/stock"
                 android:textSize="16sp"
                 app:layout_constraintStart_toEndOf="@+id/imageView14"
@@ -76,32 +79,12 @@
                 android:id="@+id/campoStock"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="2dp"
+                android:layout_marginTop="12dp"
                 android:text="0"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.075"
+                app:layout_constraintHorizontal_bias="0.069"
                 app:layout_constraintStart_toEndOf="@+id/stock_lista"
                 app:layout_constraintTop_toBottomOf="@+id/campoValor" />
-
-            <TextView
-                android:id="@+id/salidas_lista"
-                android:layout_width="55dp"
-                android:layout_height="21dp"
-                android:layout_marginStart="8dp"
-                android:text="@string/salidas"
-                android:textSize="16dp"
-                app:layout_constraintStart_toEndOf="@+id/imageView14"
-                app:layout_constraintTop_toBottomOf="@+id/stock_lista" />
-
-            <TextView
-                android:id="@+id/campoSalida"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="4dp"
-                android:layout_marginTop="3dp"
-                android:text="0"
-                app:layout_constraintStart_toEndOf="@+id/salidas_lista"
-                app:layout_constraintTop_toBottomOf="@+id/campoStock" />
 
             <Button
                 android:id="@+id/button_editar"

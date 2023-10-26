@@ -71,7 +71,7 @@ public class ProductosAdapter extends RecyclerView.Adapter<ProductosAdapter.View
             productList = (TextView) itemView.findViewById( R.id.nombre_lista );
             stockList = (TextView) itemView.findViewById( R.id.campoStock );
             valueList = (TextView) itemView.findViewById( R.id.campoValor );
-            exitList= (TextView) itemView.findViewById( R.id.campoSalida );
+            //exitList= (TextView) itemView.findViewById( R.id.campoSalida );
         }
 
         @Override
