@@ -60,18 +60,12 @@ public class TableFragment extends Fragment implements ProductosAdapter.OnItemCl
         return inflater.inflate(R.layout.fragment_table, container, false);
     }
 
+    Bundle bundle = new Bundle();
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
 
-        homee = (ImageButton) getView().findViewById(R.id.btn_home);
-        homee.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Navigation.findNavController(view).navigate(R.id.inventoryFragment);
 
-            }
-        });
 
         listaUsuarios = (RecyclerView) getView().findViewById(R.id.recyclerListaProductos);
         bdInventario = new InventarioDBHelper(getContext());

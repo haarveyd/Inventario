@@ -19,12 +19,6 @@
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/listaUsuarios"
         android:layout_width="match_parent"
-        android:layout_height="622dp" />
+        android:layout_height="699dp" />
 
-    <ImageButton
-        android:id="@+id/btn_home"
-        android:layout_width="66dp"
-        android:layout_height="59dp"
-        android:layout_weight="1"
-        app:srcCompat="@drawable/bottom_btn1" />
 </LinearLayout>
