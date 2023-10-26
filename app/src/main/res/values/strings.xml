@@ -83,4 +83,6 @@
     <string name="valor_unitario">valor unitario</string>
     <string name="txt_usuarios">USUARIOS</string>
     <string name="txt_historialf">Historial</string>
+    <string name="ID">ID :</string>
+    <string name="campoid">0</string>
 </resources>

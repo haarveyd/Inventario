@@ -21,7 +21,7 @@ public class ProductFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.list_product_item, container, false);
 
-        Button editarButton = view.findViewById(R.id.button_editar);
+        /*Button editarButton = view.findViewById(R.id.button_editar);
 
         editarButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -43,7 +43,8 @@ public class ProductFragment extends Fragment {
                         .commit();
             }
         });
-
+*/
         return view;
     }
+
 }
