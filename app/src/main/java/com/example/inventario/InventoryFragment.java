@@ -88,52 +88,58 @@ public class InventoryFragment extends Fragment {
         historial= getView().findViewById(R.id.historial_mov);
 
         database = new InventarioDBHelper(getContext());
-        String UserName;
-        //recibo datos de login
-        UserName = getArguments().getString("usuario");
-        //cursor para obtener el usuario y posicion de columna
-        Cursor obtenerUsuario = database.getUsuarioByUser(UserName);
-        int columnIndexNOM = obtenerUsuario.getColumnIndex("nomUsuario");
-        int columnIndexAP = obtenerUsuario.getColumnIndex("apUsuario");
-        if (columnIndexNOM != -1 && columnIndexAP != -1 && obtenerUsuario.moveToFirst()) {
-            String Nombre = obtenerUsuario.getString(columnIndexNOM);
-            String apellido = obtenerUsuario.getString(columnIndexAP);
+        Bundle args = getArguments();
+        if (args != null) {
+            String UserName = args.getString("usuario");
+            if (UserName != null) {
+                //recibo datos de login
+                UserName = getArguments().getString("usuario");
+                //cursor para obtener el usuario y posicion de columna
+                Cursor obtenerUsuario = database.getUsuarioByUser(UserName);
+                int columnIndexNOM = obtenerUsuario.getColumnIndex("nomUsuario");
+                int columnIndexAP = obtenerUsuario.getColumnIndex("apUsuario");
+                if (columnIndexNOM != -1 && columnIndexAP != -1 && obtenerUsuario.moveToFirst()) {
+                    String Nombre = obtenerUsuario.getString(columnIndexNOM);
+                    String apellido = obtenerUsuario.getString(columnIndexAP);
+                    nombre_intro.setText(Nombre + " " + apellido);
+
+                    entrada.setOnClickListener(new View.OnClickListener() {
+                        @Override
+                        public void onClick(View v) {
+
+                            bundle.putString("usuario2", Nombre+" "+apellido);
+                            Navigation.findNavController(view).navigate(R.id.productEntryFragment,bundle);
+                        }
+                    });
+
+                    user.setOnClickListener(new View.OnClickListener() {
+                        @Override
+                        public void onClick(View v) {
+                            Navigation.findNavController(view).navigate(R.id.usersFragment);
+                        }
+                    });
+
+                    inventario.setOnClickListener(new View.OnClickListener() {
+                        @Override
+                        public void onClick(View v) {
+                            Navigation.findNavController(view).navigate(R.id.tableFragment);
+                        }
+                    });
 
 
-            entrada.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View v) {
+                    historial.setOnClickListener(new View.OnClickListener() {
+                        @Override
+                        public void onClick(View v) {
+                            Navigation.findNavController(view).navigate(R.id.fragment_listaHistorial);
+                        }
+                    });
 
-                    bundle.putString("usuario2", Nombre+" "+apellido);
-                    Navigation.findNavController(view).navigate(R.id.productEntryFragment,bundle);
+
+
                 }
-            });
-
-            user.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View v) {
-                    Navigation.findNavController(view).navigate(R.id.usersFragment);
-                }
-            });
-
-            inventario.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View v) {
-                    Navigation.findNavController(view).navigate(R.id.tableFragment);
-                }
-            });
-
-
-            historial.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View v) {
-                    Navigation.findNavController(view).navigate(R.id.fragment_listaHistorial);
-                }
-            });
-
-
-
+            }
         }
+
 
 
 
