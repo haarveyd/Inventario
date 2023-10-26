@@ -41,9 +41,6 @@
         android:label="InventoryFragment"
         tools:layout="@layout/fragment_inventory" >
         <action
-            android:id="@+id/action_inventoryFragment_to_productOutputFragment"
-            app:destination="@id/productOutputFragment" />
-        <action
             android:id="@+id/action_inventoryFragment_to_productEntryFragment"
             app:destination="@id/productEntryFragment" />
         <action
