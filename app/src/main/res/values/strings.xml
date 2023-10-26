@@ -48,7 +48,6 @@
     <string name="SOLDPRODUCTOUT">SOLD</string>
     <string name="MOTHYLYSALES">Monthly Sales</string>
     <string name="MONTHLYSALES2">Monthly Sales</string>
-    <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="registrarse" translatable="false">Registrarse</string>
     <string name="nombre_de_la_compa_a" translatable="false">Nombre de la Compañía</string>
     <string name="nombre">Nombre</string>
@@ -62,6 +61,7 @@
     <string name="nombre_producto" translatable="false">nombre</string>
     <string name="stock" translatable="false">stock:</string>
     <string name="valor" translatable="false">valor:</string>
+    <string name="salidas" translatable="false">salidas:</string>
     <string name="editar" translatable="false">editar</string>
     <string name="nombre_prod" translatable="false">nombre producto</string>
     <string name="stock_prod" translatable="false">stock producto</string>

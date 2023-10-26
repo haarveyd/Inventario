@@ -19,11 +19,6 @@ import com.example.inventario.data.InventarioDBHelper;
 import com.example.inventario.data.Productos;
 import com.example.inventario.data.ProductosAdapter;
 
-/**
- * A simple {@link Fragment} subclass.
- * Use the {@link TableFragment#newInstance} factory method to
- * create an instance of this fragment.
- */
 public class TableFragment extends Fragment implements ProductosAdapter.OnItemClickListener {
 
     private RecyclerView listaUsuarios;
