@@ -98,7 +98,7 @@ public class UsersFragment extends Fragment implements UsuarioAdapter.OnItemClic
 
         @Override
         protected Cursor doInBackground(Void... voids) {
-            return baseDatos.getAllProductos();
+            return baseDatos.getAllUsuarios();
         }
 
         @Override
