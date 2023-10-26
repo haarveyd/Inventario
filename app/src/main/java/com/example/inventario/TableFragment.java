@@ -60,6 +60,7 @@ public class TableFragment extends Fragment implements ProductosAdapter.OnItemCl
         return inflater.inflate(R.layout.fragment_table, container, false);
     }
 
+    Bundle bundle = new Bundle();
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
@@ -68,8 +69,8 @@ public class TableFragment extends Fragment implements ProductosAdapter.OnItemCl
         homee.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Navigation.findNavController(view).navigate(R.id.inventoryFragment);
 
+                Navigation.findNavController(view).navigate(R.id.inventoryFragment);
             }
         });
 

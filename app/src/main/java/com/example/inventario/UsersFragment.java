@@ -77,6 +77,7 @@ public class UsersFragment extends Fragment implements UsuarioAdapter.OnItemClic
         // Inflate the layout for this fragment
         return inflater.inflate(R.layout.fragment_user, container, false);
     }
+    Bundle bundle = new Bundle();
     private ImageButton homee;
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
@@ -85,7 +86,7 @@ public class UsersFragment extends Fragment implements UsuarioAdapter.OnItemClic
         homee.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Navigation.findNavController(view).navigate(R.id.inventoryFragment, new Bundle());
+                Navigation.findNavController(view).navigate(R.id.inventoryFragment);
 
             }
         });

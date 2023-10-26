@@ -40,7 +40,7 @@ public class ProductosAdapter extends RecyclerView.Adapter<ProductosAdapter.View
         holder.productList.setText(productoSeleccionado.getnomProducto().toString());
         holder.stockList.setText(Integer.toString(productoSeleccionado.getStock()));
         holder.valueList.setText(Integer.toString(productoSeleccionado.getValorUnitario()));
-        holder.exitList.setText(Integer.toString(productoSeleccionado.getSalidas()));
+        //holder.exitList.setText(Integer.toString(productoSeleccionado.getSalidas()));
     }
 
     @Override

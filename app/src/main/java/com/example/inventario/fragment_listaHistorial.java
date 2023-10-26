@@ -62,6 +62,7 @@ public class fragment_listaHistorial extends Fragment implements MovimientosAdap
 
         return inflater.inflate(R.layout.fragment_lista_historial, container, false);
     }
+    Bundle bundle = new Bundle();
 
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {

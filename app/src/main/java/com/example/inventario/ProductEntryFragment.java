@@ -83,6 +83,7 @@ public class ProductEntryFragment extends Fragment {
         return view;
     }
 
+    Bundle bundle = new Bundle();
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
