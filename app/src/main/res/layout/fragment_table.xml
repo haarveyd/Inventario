@@ -24,7 +24,13 @@
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recyclerListaProductos"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        tools:listitem="@layout/fragment_product" />
+        android:layout_height="604dp"
+        tools:listitem="@layout/list_product_item" />
+
+    <ImageButton
+        android:id="@+id/btn_home"
+        android:layout_width="59dp"
+        android:layout_height="51dp"
+        app:srcCompat="@drawable/bottom_btn1" />
 
 </LinearLayout>

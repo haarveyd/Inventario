@@ -28,7 +28,7 @@ public class MovimientosAdapter extends RecyclerView.Adapter<MovimientosAdapter.
     @NonNull
     @Override
     public MovimientosAdapter.ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        View v = LayoutInflater.from( parent.getContext() ).inflate( R.layout.fragment_historial,parent,false );
+        View v = LayoutInflater.from( parent.getContext() ).inflate( R.layout.list_historial_item,parent,false );
         return new MovimientosAdapter.ViewHolder( v );
     }
 

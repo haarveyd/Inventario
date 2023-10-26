@@ -13,6 +13,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageButton;
 import android.widget.Toast;
 
 import com.example.inventario.data.InventarioDBHelper;
@@ -31,6 +32,7 @@ public class ProductEntryFragment extends Fragment {
     InventarioDBHelper database;
 
     Button enviar;
+    private ImageButton homee;
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
     private static final String ARG_PARAM1 = "param1";
@@ -84,6 +86,14 @@ public class ProductEntryFragment extends Fragment {
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
+        homee = (ImageButton) getView().findViewById(R.id.btn_home);
+        homee.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Navigation.findNavController(view).navigate(R.id.inventoryFragment);
+
+            }
+        });
 
     NombreRegistro = getView().findViewById(R.id.input_usuario);
     CodigoRegistro = getView().findViewById(R.id.input_Code);

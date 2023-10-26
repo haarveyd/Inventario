@@ -7,12 +7,15 @@ import android.os.Bundle;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
+import androidx.navigation.Navigation;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
+import android.widget.ImageButton;
 
 import com.example.inventario.data.InventarioDBHelper;
 import com.example.inventario.data.Usuario;
@@ -74,9 +77,19 @@ public class UsersFragment extends Fragment implements UsuarioAdapter.OnItemClic
         // Inflate the layout for this fragment
         return inflater.inflate(R.layout.fragment_user, container, false);
     }
-
+    private ImageButton homee;
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
+
+        homee = (ImageButton) getView().findViewById(R.id.btn_home);
+        homee.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Navigation.findNavController(view).navigate(R.id.inventoryFragment, new Bundle());
+
+            }
+        });
+
         listaPersonas =(RecyclerView)getView().findViewById(R.id.listaUsuarios);
         baseDatos = new InventarioDBHelper( getContext() );
 
@@ -86,6 +99,8 @@ public class UsersFragment extends Fragment implements UsuarioAdapter.OnItemClic
         usuariosAdapter = new UsuarioAdapter(this);
         listaPersonas.setAdapter( usuariosAdapter );
         loadUsuario();
+
+
     }
     @Override
     public void onClick(UsuarioAdapter.ViewHolder view, Usuario usuarioactualizado) {

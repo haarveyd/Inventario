@@ -69,11 +69,11 @@
     <string name="editar_agregar" translatable="false">editar o agregar</string>
     <string name="agregar" translatable="false"> agregar</string>
     <string name="registrar" translatable="false"> Registarse</string>
-    <string name="txt_user">User</string>
+    <string name="txt_user">Usuarios</string>
     <string name="txt_historial">HISTORIAL</string>
     <string name="input_codproducto">Código</string>
     <string name="input_cantidad">Cantidad</string>
-    <string name="txt_nombres">Nombre</string>
+    <string name="txt_nombres">Nombre:</string>
     <string name="txt_nombre">Nombre</string>
     <string name="txt_apellido">Apellido</string>
     <string name="txt_User">Usuario</string>
@@ -81,4 +81,6 @@
     <string name="txt_id2">Id</string>
     <string name="txt_id">Id</string>
     <string name="valor_unitario">valor unitario</string>
+    <string name="txt_usuarios">USUARIOS</string>
+    <string name="txt_historialf">Historial</string>
 </resources>

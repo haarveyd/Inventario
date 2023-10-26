@@ -88,17 +88,23 @@ public class InventoryFragment extends Fragment {
         historial= getView().findViewById(R.id.historial_mov);
 
         database = new InventarioDBHelper(getContext());
-
+        String UserName;
         //recibo datos de login
-        String UserName = getArguments().getString("usuario");
-        //cursor para obtener el usuario y posicion de columna
-        Cursor obtenerUsuario = database.getUsuarioByUser(UserName);
-        int columnIndexNOM = obtenerUsuario.getColumnIndex("nomUsuario");
-        int columnIndexAP = obtenerUsuario.getColumnIndex("apUsuario");
-        if (columnIndexNOM != -1 && columnIndexAP != -1 && obtenerUsuario.moveToFirst()) {
-            String Nombre = obtenerUsuario.getString(columnIndexNOM);
-            String apellido = obtenerUsuario.getString(columnIndexAP);
-            nombre_intro.setText(Nombre+" "+ apellido);
+
+        if (bundle != null) {
+            UserName = bundle.getString("usuario");
+            Cursor obtenerUsuario = database.getUsuarioByUser(UserName);
+            //cursor para obtener el usuario y posicion de columna
+            int columnIndexNOM = obtenerUsuario.getColumnIndex("nomUsuario");
+            int columnIndexAP = obtenerUsuario.getColumnIndex("apUsuario");
+            if (columnIndexNOM != -1 && columnIndexAP != -1 && obtenerUsuario.moveToFirst()) {
+                String Nombre = obtenerUsuario.getString(columnIndexNOM);
+                String apellido = obtenerUsuario.getString(columnIndexAP);
+                nombre_intro.setText(Nombre+" "+ apellido);
+        } else {
+            UserName="default";
+        }
+
 
 
             entrada.setOnClickListener(new View.OnClickListener() {

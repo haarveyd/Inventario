@@ -9,10 +9,7 @@ import android.widget.TextView;
 import com.example.inventario.R;
 
 import androidx.annotation.NonNull;
-import androidx.navigation.Navigation;
 import androidx.recyclerview.widget.RecyclerView;
-
-import com.example.inventario.TableFragment;
 
 public class ProductosAdapter extends RecyclerView.Adapter<ProductosAdapter.ViewHolder> {
 
@@ -32,7 +29,7 @@ public class ProductosAdapter extends RecyclerView.Adapter<ProductosAdapter.View
     @NonNull
     @Override
     public ProductosAdapter.ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        View v = LayoutInflater.from( parent.getContext() ).inflate( R.layout.fragment_product,parent,false );
+        View v = LayoutInflater.from( parent.getContext() ).inflate( R.layout.list_product_item,parent,false );
         return new ViewHolder( v );
     }
 

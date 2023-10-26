@@ -40,7 +40,8 @@
         android:layout_gravity="center_horizontal"
         android:layout_weight="1"
         android:ems="10"
-        android:hint="@string/input_codproducto" />
+        android:hint="@string/input_codproducto"
+        android:inputType="number" />
 
     <EditText
         android:id="@+id/input_Quantity"
@@ -49,7 +50,8 @@
         android:layout_gravity="center_horizontal"
         android:layout_weight="1"
         android:ems="10"
-        android:hint="@string/input_cantidad" />
+        android:hint="@string/input_cantidad"
+        android:inputType="number" />
 
 
     <EditText
@@ -68,22 +70,11 @@
         android:onClick="cambiarColorTexto1"
         android:text="@string/SAVEPRODUC" />
 
-    <androidx.constraintlayout.widget.ConstraintLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content">
-
-        <ImageButton
-            android:id="@+id/imageView12"
-            android:layout_width="51dp"
-            android:layout_height="48dp"
-            android:layout_marginStart="4dp"
-            android:background="@drawable/back_1"
-            android:src="@drawable/bottom_btn1"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.0" />
-    </androidx.constraintlayout.widget.ConstraintLayout>
+    <ImageButton
+        android:id="@+id/btn_home"
+        android:layout_width="59dp"
+        android:layout_height="63dp"
+        app:srcCompat="@drawable/bottom_btn1" />
 
 
 </LinearLayout>
