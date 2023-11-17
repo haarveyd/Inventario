@@ -7,7 +7,7 @@
 
     <fragment
         android:id="@+id/introFragment"
-        android:name="com.example.inventario.IntroFragment"
+        android:name="full.papeleria.inventario.IntroFragment"
         android:label="IntroFragment"
         tools:layout="@layout/fragment_intro" >
         <action
@@ -16,7 +16,7 @@
     </fragment>
     <fragment
         android:id="@+id/loginFragment"
-        android:name="com.example.inventario.LoginFragment"
+        android:name="full.papeleria.inventario.LoginFragment"
         android:label="fragment_login"
         tools:layout="@layout/fragment_login" >
         <action
@@ -28,7 +28,7 @@
     </fragment>
     <fragment
         android:id="@+id/registerFragment"
-        android:name="com.example.inventario.RegisterFragment"
+        android:name="full.papeleria.inventario.RegisterFragment"
         android:label="fragment_register"
         tools:layout="@layout/fragment_register" >
         <action
@@ -37,7 +37,7 @@
     </fragment>
     <fragment
         android:id="@+id/inventoryFragment"
-        android:name="com.example.inventario.InventoryFragment"
+        android:name="full.papeleria.inventario.InventoryFragment"
         android:label="InventoryFragment"
         tools:layout="@layout/fragment_inventory" >
         <action
@@ -59,7 +59,7 @@
     </fragment>
     <fragment
         android:id="@+id/tableFragment"
-        android:name="com.example.inventario.TableFragment"
+        android:name="full.papeleria.inventario.TableFragment"
         android:label="TableFragment"
         tools:layout="@layout/fragment_table" >
         <action
@@ -71,7 +71,7 @@
     </fragment>
     <fragment
         android:id="@+id/productEntryFragment"
-        android:name="com.example.inventario.ProductEntryFragment"
+        android:name="full.papeleria.inventario.ProductEntryFragment"
         android:label="ProductEntryFragment"
         tools:layout="@layout/fragment_productentry" >
         <action
@@ -80,7 +80,7 @@
     </fragment>
     <fragment
         android:id="@+id/fragment_listaHistorial"
-        android:name="com.example.inventario.fragment_listaHistorial"
+        android:name="full.papeleria.inventario.fragment_listaHistorial"
         android:label="fragment_lista_historial"
         tools:layout="@layout/fragment_lista_historial" >
         <action
@@ -89,12 +89,12 @@
     </fragment>
     <fragment
         android:id="@+id/editFragment"
-        android:name="com.example.inventario.EditFragment"
+        android:name="full.papeleria.inventario.EditFragment"
         android:label="fragment_edit"
         tools:layout="@layout/fragment_edit" />
     <fragment
         android:id="@+id/usersFragment"
-        android:name="com.example.inventario.UsersFragment"
+        android:name="full.papeleria.inventario.UsersFragment"
         android:label="fragment_user"
         tools:layout="@layout/fragment_user" >
         <action

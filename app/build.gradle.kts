@@ -3,11 +3,11 @@ plugins {
 }
 
 android {
-    namespace = "com.example.inventario"
+    namespace = "full.papeleria.inventario"
     compileSdk = 34
 
     defaultConfig {
-        applicationId = "com.example.inventario"
+        applicationId = "full.papeleria.inventario"
         minSdk = 29
         targetSdk = 34
         versionCode = 1

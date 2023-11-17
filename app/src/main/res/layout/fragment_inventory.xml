@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:background="#DCDCF2"
     android:scrollbarSize="16sp"
-    tools:context=".InventoryFragment">
+    tools:context="full.papeleria.inventario.InventoryFragment">
 
     <androidx.coordinatorlayout.widget.CoordinatorLayout
         android:layout_width="match_parent"
