@@ -12,6 +12,8 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 
+import com.example.inventario.R;
+
 import full.papeleria.inventario.R;
 
 /**

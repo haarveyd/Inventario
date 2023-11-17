@@ -15,7 +15,10 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageButton;
 
-import full.papeleria.inventario.R;
+
+import com.example.inventario.R;
+
+//import full.papeleria.inventario.R;
 
 import full.papeleria.inventario.data.InventarioDBHelper;
 import full.papeleria.inventario.data.Movimientos;
@@ -61,6 +64,8 @@ public class fragment_listaHistorial extends Fragment implements MovimientosAdap
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
 
         return inflater.inflate(R.layout.fragment_lista_historial, container, false);
+
+
     }
 
 

@@ -15,6 +15,8 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageButton;
 
+import com.example.inventario.R;
+
 import full.papeleria.inventario.R;
 
 import full.papeleria.inventario.data.InventarioDBHelper;

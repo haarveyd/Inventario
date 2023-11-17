@@ -1,4 +1,4 @@
-package com.example.inventario;
+package full.papeleria.inventario;
 
 import android.database.Cursor;
 import android.os.Bundle;
@@ -15,10 +15,12 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
 
-import com.example.inventario.data.InventarioDBHelper;
-import com.example.inventario.data.Productos;
-import com.example.inventario.data.ProductosAdapter;
-import com.example.inventario.data.ProductosContract;
+import com.example.inventario.R;
+
+import full.papeleria.inventario.data.InventarioDBHelper;
+import full.papeleria.inventario.data.Productos;
+import full.papeleria.inventario.data.ProductosAdapter;
+import full.papeleria.inventario.data.ProductosContract;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -75,6 +77,7 @@ public class EditFragment extends Fragment {
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         return inflater.inflate(R.layout.fragment_edit, container, false);
+                
     }
 
     EditText salidas, idproducto;

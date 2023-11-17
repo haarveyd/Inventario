@@ -15,6 +15,8 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import com.example.inventario.R;
+
 import full.papeleria.inventario.R;
 
 import full.papeleria.inventario.data.InventarioDBHelper;

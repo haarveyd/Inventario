@@ -9,6 +9,8 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.example.inventario.R;
+
 import full.papeleria.inventario.R;
 
 import full.papeleria.inventario.data.Usuario;
@@ -28,7 +30,7 @@ public class UsuarioAdapter extends RecyclerView.Adapter<UsuarioAdapter.ViewHold
     @NonNull
     @Override
     public UsuarioAdapter.ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        View v = LayoutInflater.from( parent.getContext() ).inflate( R.layout.list_user_item, parent, false);
+        View v = LayoutInflater.from( parent.getContext() ).inflate(R.layout.list_user_item, parent, false);
         return new ViewHolder(v);
     }
 
