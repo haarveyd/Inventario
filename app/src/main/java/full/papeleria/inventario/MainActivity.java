@@ -1,11 +1,7 @@
 package full.papeleria.inventario;
 
 import androidx.appcompat.app.AppCompatActivity;
-
 import android.os.Bundle;
-
-import com.example.inventario.R;
-
 import full.papeleria.inventario.R;
 
 public class MainActivity extends AppCompatActivity {

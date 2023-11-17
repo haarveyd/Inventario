@@ -17,10 +17,7 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.ImageButton;
 
-import com.example.inventario.R;
-
 import full.papeleria.inventario.R;
-
 import full.papeleria.inventario.data.InventarioDBHelper;
 import full.papeleria.inventario.data.Productos;
 import full.papeleria.inventario.data.ProductosAdapter;
@@ -38,7 +35,7 @@ public class TableFragment extends Fragment implements ProductosAdapter.OnItemCl
     private Button output;
 
     public TableFragment() {
-        // Required empty public constructor
+
     }
 
     public static TableFragment newInstance(String param1, String param2) {
@@ -65,6 +62,7 @@ public class TableFragment extends Fragment implements ProductosAdapter.OnItemCl
     }
 
     Bundle bundle = new Bundle();
+
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);

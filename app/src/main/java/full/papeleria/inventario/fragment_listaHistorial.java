@@ -15,14 +15,9 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageButton;
 
-
-import com.example.inventario.R;
-
-//import full.papeleria.inventario.R;
-
+import full.papeleria.inventario.R;
 import full.papeleria.inventario.data.InventarioDBHelper;
 import full.papeleria.inventario.data.Movimientos;
-
 import full.papeleria.inventario.data.MovimientosAdapter;
 
 
@@ -39,7 +34,7 @@ public class fragment_listaHistorial extends Fragment implements MovimientosAdap
     private ImageButton homee;
 
     public fragment_listaHistorial() {
-        // Required empty public constructor
+
     }
 
     public static fragment_listaHistorial newInstance(String param1, String param2) {
@@ -62,25 +57,20 @@ public class fragment_listaHistorial extends Fragment implements MovimientosAdap
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-
         return inflater.inflate(R.layout.fragment_lista_historial, container, false);
-
-
     }
 
 
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
-
-        listaMovimientos = (RecyclerView) getView().findViewById( R.id.recycler_movimientos );
-        bdInventario = new InventarioDBHelper( getContext() );
-
-        listaMovimientos.setHasFixedSize( true );
-        linearLayoutManager = new LinearLayoutManager( getContext() );
-        listaMovimientos.setLayoutManager( linearLayoutManager );
-        adaptadorMovimientos = new MovimientosAdapter( this );
-        listaMovimientos.setAdapter( adaptadorMovimientos );
+        listaMovimientos = (RecyclerView) getView().findViewById(R.id.recycler_movimientos);
+        bdInventario = new InventarioDBHelper(getContext());
+        listaMovimientos.setHasFixedSize(true);
+        linearLayoutManager = new LinearLayoutManager(getContext());
+        listaMovimientos.setLayoutManager(linearLayoutManager);
+        adaptadorMovimientos = new MovimientosAdapter(this);
+        listaMovimientos.setAdapter(adaptadorMovimientos);
         loadMovimientos();
 
     }
@@ -88,12 +78,12 @@ public class fragment_listaHistorial extends Fragment implements MovimientosAdap
 
     @Override
     public void onClick(MovimientosAdapter.ViewHolder view, Movimientos MovimientosActualizado) {
-        bdInventario.updateMovimiento(MovimientosActualizado,String.valueOf(MovimientosActualizado.getId_mov()));
+        bdInventario.updateMovimiento(MovimientosActualizado, String.valueOf(MovimientosActualizado.getId_mov()));
         loadMovimientos();
     }
 
     private void loadMovimientos() {
-        new fragment_listaHistorial.MovimientosLoaderTask().execute( );
+        new fragment_listaHistorial.MovimientosLoaderTask().execute();
     }
 
     private class MovimientosLoaderTask extends AsyncTask<Void, Void, Cursor> {
@@ -106,7 +96,7 @@ public class fragment_listaHistorial extends Fragment implements MovimientosAdap
         @Override
         protected void onPostExecute(Cursor cursor) {
             if (cursor != null && cursor.getCount() > 0) {
-                adaptadorMovimientos.swapCursor( cursor );
+                adaptadorMovimientos.swapCursor(cursor);
             }
         }
     }

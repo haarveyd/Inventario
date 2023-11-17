@@ -15,46 +15,26 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageButton;
 
-import com.example.inventario.R;
-
 import full.papeleria.inventario.R;
-
 import full.papeleria.inventario.data.InventarioDBHelper;
 import full.papeleria.inventario.data.Usuario;
 
-/**
- * A simple {@link Fragment} subclass.
- * Use the {@link UsersFragment#newInstance} factory method to
- * create an instance of this fragment.
- */
-public class UsersFragment extends Fragment implements UsuarioAdapter.OnItemClickListener{
+public class UsersFragment extends Fragment implements UsuarioAdapter.OnItemClickListener {
     private RecyclerView listaPersonas;
     private InventarioDBHelper baseDatos;
     private LinearLayoutManager linearLayoutManager;
     private UsuarioAdapter usuariosAdapter;
 
-    // TODO: Rename parameter arguments, choose names that match
-    // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
     private static final String ARG_PARAM1 = "param1";
     private static final String ARG_PARAM2 = "param2";
 
-    // TODO: Rename and change types of parameters
     private String mParam1;
     private String mParam2;
 
     public UsersFragment() {
-        // Required empty public constructor
+
     }
 
-    /**
-     * Use this factory method to create a new instance of
-     * this fragment using the provided parameters.
-     *
-     * @param param1 Parameter 1.
-     * @param param2 Parameter 2.
-     * @return A new instance of fragment UsersFragment.
-     */
-    // TODO: Rename and change types and number of parameters
     public static UsersFragment newInstance(String param1, String param2) {
         UsersFragment fragment = new UsersFragment();
         Bundle args = new Bundle();
@@ -74,37 +54,36 @@ public class UsersFragment extends Fragment implements UsuarioAdapter.OnItemClic
     }
 
     @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container,
-                             Bundle savedInstanceState) {
-        // Inflate the layout for this fragment
+    public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         return inflater.inflate(R.layout.fragment_user, container, false);
     }
+
     Bundle bundle = new Bundle();
     private ImageButton homee;
+
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
 
-
-
-        listaPersonas =(RecyclerView)getView().findViewById(R.id.listaUsuarios);
-        baseDatos = new InventarioDBHelper( getContext() );
-
-        listaPersonas.setHasFixedSize( true );
-        linearLayoutManager = new LinearLayoutManager( getContext() );
-        listaPersonas.setLayoutManager( linearLayoutManager );
+        listaPersonas = (RecyclerView) getView().findViewById(R.id.listaUsuarios);
+        baseDatos = new InventarioDBHelper(getContext());
+        listaPersonas.setHasFixedSize(true);
+        linearLayoutManager = new LinearLayoutManager(getContext());
+        listaPersonas.setLayoutManager(linearLayoutManager);
         usuariosAdapter = new UsuarioAdapter(this);
-        listaPersonas.setAdapter( usuariosAdapter );
+        listaPersonas.setAdapter(usuariosAdapter);
         loadUsuario();
-
-
     }
+
     @Override
     public void onClick(UsuarioAdapter.ViewHolder view, Usuario usuarioactualizado) {
-        baseDatos.updateUsuario(usuarioactualizado,String.valueOf(usuarioactualizado.getCodigo()));
+        baseDatos.updateUsuario(usuarioactualizado, String.valueOf(usuarioactualizado.getCodigo()));
         loadUsuario();
     }
 
-    private void loadUsuario() {new UsuarioLoaderTask().execute( );}
+    private void loadUsuario() {
+        new UsuarioLoaderTask().execute();
+    }
+
     private class UsuarioLoaderTask extends AsyncTask<Void, Void, Cursor> {
 
         @Override
@@ -115,7 +94,7 @@ public class UsersFragment extends Fragment implements UsuarioAdapter.OnItemClic
         @Override
         protected void onPostExecute(Cursor cursor) {
             if (cursor != null && cursor.getCount() > 0) {
-                usuariosAdapter.swapCursor( cursor );
+                usuariosAdapter.swapCursor(cursor);
             }
         }
     }

@@ -9,28 +9,26 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.example.inventario.R;
-
 import full.papeleria.inventario.R;
-
 import full.papeleria.inventario.data.Usuario;
 
 public class UsuarioAdapter extends RecyclerView.Adapter<UsuarioAdapter.ViewHolder> {
 
     private Cursor cursorListaUsuarios;
     private OnItemClickListener listenerClick;
-    public  UsuarioAdapter(OnItemClickListener listenerClick) {
+
+    public UsuarioAdapter(OnItemClickListener listenerClick) {
         this.listenerClick = listenerClick;
     }
 
-    interface OnItemClickListener{
+    interface OnItemClickListener {
         public void onClick(ViewHolder view, Usuario usuarioactualizado);
     }
 
     @NonNull
     @Override
     public UsuarioAdapter.ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        View v = LayoutInflater.from( parent.getContext() ).inflate(R.layout.list_user_item, parent, false);
+        View v = LayoutInflater.from(parent.getContext()).inflate(R.layout.list_user_item, parent, false);
         return new ViewHolder(v);
     }
 
@@ -52,8 +50,8 @@ public class UsuarioAdapter extends RecyclerView.Adapter<UsuarioAdapter.ViewHold
         return 0;
     }
 
-    public void swapCursor(Cursor nuevoCursor){
-        if(nuevoCursor!=null){
+    public void swapCursor(Cursor nuevoCursor) {
+        if (nuevoCursor != null) {
             cursorListaUsuarios = nuevoCursor;
             notifyDataSetChanged();
         }
@@ -67,12 +65,12 @@ public class UsuarioAdapter extends RecyclerView.Adapter<UsuarioAdapter.ViewHold
         TextView user;
 
         public ViewHolder(@NonNull View itemView) {
-            super( itemView );
-            IdU = (TextView) itemView.findViewById( R.id.txt_id );
-            nombre = (TextView) itemView.findViewById( R.id.txt_nombre );
-            apellido = (TextView) itemView.findViewById( R.id.txt_apellido );
-            user = (TextView) itemView.findViewById( R.id.txt_user );
-            itemView.setOnClickListener( this );
+            super(itemView);
+            IdU = (TextView) itemView.findViewById(R.id.txt_id);
+            nombre = (TextView) itemView.findViewById(R.id.txt_nombre);
+            apellido = (TextView) itemView.findViewById(R.id.txt_apellido);
+            user = (TextView) itemView.findViewById(R.id.txt_user);
+            itemView.setOnClickListener(this);
         }
 
         @Override
@@ -81,11 +79,10 @@ public class UsuarioAdapter extends RecyclerView.Adapter<UsuarioAdapter.ViewHold
         }
     }
 
-
-    private Usuario obtenerUsuario(int posicion){
-        if (cursorListaUsuarios!=null){
-            cursorListaUsuarios.moveToPosition( posicion );
-            Usuario nuevoUsuario = new Usuario( cursorListaUsuarios );
+    private Usuario obtenerUsuario(int posicion) {
+        if (cursorListaUsuarios != null) {
+            cursorListaUsuarios.moveToPosition(posicion);
+            Usuario nuevoUsuario = new Usuario(cursorListaUsuarios);
             return nuevoUsuario;
         }
         return null;
