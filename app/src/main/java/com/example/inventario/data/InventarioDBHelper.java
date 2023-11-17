@@ -247,6 +247,7 @@ public class InventarioDBHelper extends SQLiteOpenHelper {
         );
     }
 
+
     public Productos getProductById(int productoId) {
         SQLiteDatabase db = getReadableDatabase();
         Productos product = null;

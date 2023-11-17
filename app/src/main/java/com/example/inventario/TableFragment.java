@@ -31,7 +31,7 @@ public class TableFragment extends Fragment implements ProductosAdapter.OnItemCl
     private static final String ARG_PARAM2 = "param2";
     private String mParam1;
     private String mParam2;
-    private ImageButton homee;
+    private Button output;
 
     public TableFragment() {
         // Required empty public constructor
@@ -64,8 +64,13 @@ public class TableFragment extends Fragment implements ProductosAdapter.OnItemCl
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
-
-
+        output = getView().findViewById(R.id.buttonEditar);
+        output.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Navigation.findNavController(view).navigate(R.id.editFragment);
+            }
+        });
 
         listaUsuarios = (RecyclerView) getView().findViewById(R.id.recyclerListaProductos);
         bdInventario = new InventarioDBHelper(getContext());
@@ -80,11 +85,12 @@ public class TableFragment extends Fragment implements ProductosAdapter.OnItemCl
 
     @Override
     public void onClick(ProductosAdapter.ViewHolder view, Productos productoActualizado) {
-        System.out.println("Emtro");
+
         bdInventario.updateProducto(productoActualizado, String.valueOf(productoActualizado.getCodigo()));
         loadProductos();
-        Navigation.findNavController(getView()).navigate(R.id.editFragment);
+
     }
+
 
     private void loadProductos() {
         new ProductosLoaderTask().execute();

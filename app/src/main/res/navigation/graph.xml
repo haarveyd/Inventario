@@ -52,6 +52,10 @@
         <action
             android:id="@+id/action_inventoryFragment_to_usersFragment"
             app:destination="@id/usersFragment" />
+        <argument
+            android:name="usuario"
+            app:argType="string"
+            android:defaultValue='"default"' />
     </fragment>
     <fragment
         android:id="@+id/tableFragment"

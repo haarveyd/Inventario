@@ -85,4 +85,6 @@
     <string name="txt_historialf">Historial</string>
     <string name="ID">ID :</string>
     <string name="campoid">0</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>
