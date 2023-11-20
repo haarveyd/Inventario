@@ -20,16 +20,16 @@
 
     <ImageView
         android:id="@+id/imageView8"
-        android:layout_width="335dp"
-        android:layout_height="239dp"
+        android:layout_width="276dp"
+        android:layout_height="200dp"
+        android:contentDescription="@string/todo_2"
         app:layout_constraintBottom_toBottomOf="@+id/imageView"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.495"
+        app:layout_constraintHorizontal_bias="0.496"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.0"
-        app:srcCompat="@drawable/_311295_395"
-        android:contentDescription="@string/todo_2" />
+        app:layout_constraintVertical_bias="0.119"
+        app:srcCompat="@drawable/inventarioicono" />
 
     <LinearLayout
         android:layout_width="match_parent"

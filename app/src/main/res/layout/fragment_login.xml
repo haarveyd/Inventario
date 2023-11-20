@@ -20,15 +20,15 @@
 
     <ImageView
         android:id="@+id/imageView8"
-        android:layout_width="351dp"
-        android:layout_height="257dp"
+        android:layout_width="316dp"
+        android:layout_height="223dp"
         app:layout_constraintBottom_toBottomOf="@+id/imageView"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.533"
+        app:layout_constraintHorizontal_bias="0.494"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.052"
-        app:srcCompat="@drawable/_311295_395" />
+        app:layout_constraintVertical_bias="0.163"
+        app:srcCompat="@drawable/inventarioicono" />
 
     <TextView
         android:id="@+id/textView5"
